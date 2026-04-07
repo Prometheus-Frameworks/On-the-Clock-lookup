@@ -63,6 +63,20 @@ If one AI coding/review agent is unavailable:
 2. Record the switch in `BUILD_LOG.md`
 3. Keep prompts and outcomes visible so anyone can audit decisions later
 
+## Local development
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the app:
+   ```bash
+   npm run dev
+   ```
+3. Open `http://localhost:3000` and search for one of the mock sample players:
+   - Drake London
+   - Garrett Wilson
+   - Brock Bowers
+
 ## Public build log process
 Future build prompts and meaningful build steps are logged in `BUILD_LOG.md`.
 
@@ -74,8 +88,3 @@ Each entry should include:
 - files changed
 - result
 - notes/issues
-
-This is the source of truth for how the project was built in public.
-
-## Current status
-This repository currently contains project foundation documents only. App code is intentionally not implemented yet.

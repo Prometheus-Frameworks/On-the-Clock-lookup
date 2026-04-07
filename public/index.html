@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On-the-Clock Lookup</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>On-the-Clock Lookup</h1>
+      <p class="subtitle">Search a player to view the MVP lookup card.</p>
+
+      <form id="player-search-form" class="search-form">
+        <label for="player-name">Player name</label>
+        <div class="search-row">
+          <input id="player-name" name="player-name" type="text" placeholder="e.g. Drake London" required />
+          <button type="submit">Search</button>
+        </div>
+      </form>
+
+      <section id="result" aria-live="polite"></section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
