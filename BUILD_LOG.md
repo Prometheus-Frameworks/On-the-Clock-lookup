@@ -67,3 +67,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a simple adapter path that resolves `seasonTotals2025` from a checked-in local artifact derived from nflverse 2025 regular-season player stats; all other player card data remains mocked.
 - **Notes/issues:** Kept the season totals source explicit in `sourceLabels` and UI source text. Missing totals still return `null` and render as “unavailable”.
+
+### 2026-04-07 — 2025 PPR finish moved from mock to real-source-backed path
+- **Date:** 2026-04-07
+- **Goal:** Replace mocked `2025 PPR finish` with a real-source-backed value while keeping KTC and Dynasty Data Lab fields mocked.
+- **Prompt used:** “Build the next PR… replacing the mocked 2025 PPR finish field with a real-source-backed implementation, while keeping the rest of the app structure intact.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/pprFinish2025.nflverse.json`
+  - `src/data/pprFinish2025.js`
+  - `src/api/lookupPlayer.js`
+  - `src/data/mockPlayers.js`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a local real-source-backed adapter for `pprFinish2025` using nflverse-derived data and wired it into lookup responses; UI now shows a dedicated PPR source label while preserving unavailable behavior for missing PPR values.
+- **Notes/issues:** PPR finish is represented as positional finish derived by sorting `fantasy_points_ppr` within each position from nflverse 2025 regular-season stats.
