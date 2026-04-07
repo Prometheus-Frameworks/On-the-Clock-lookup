@@ -2,7 +2,7 @@ const SOURCE_LABELS = {
   pprFinish: 'Public season stats (mock)',
   ktc: 'KeepTradeCut (mock)',
   dynastyDataLab: 'Dynasty Data Lab (mock)',
-  seasonTotals: 'Public season stats (mock)'
+  seasonTotals: 'nflverse stats_player_reg_2025.csv (real, local artifact)'
 };
 
 /** @type {import('./playerContract').PlayerLookupResponse[]} */
@@ -16,7 +16,7 @@ const MOCK_PLAYERS = [
     ktcValue: 6210,
     dynastyDataLabAdp: 20.4,
     dynastyDataLabValue: 6040,
-    seasonTotals2025: '96 rec / 1310 yds / 9 TD',
+    seasonTotals2025: null,
     sourceLabels: SOURCE_LABELS
   },
   {
@@ -28,7 +28,7 @@ const MOCK_PLAYERS = [
     ktcValue: 7015,
     dynastyDataLabAdp: 14.2,
     dynastyDataLabValue: null,
-    seasonTotals2025: '103 rec / 1378 yds / 8 TD',
+    seasonTotals2025: null,
     sourceLabels: SOURCE_LABELS
   },
   {

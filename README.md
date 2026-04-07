@@ -63,6 +63,11 @@ If one AI coding/review agent is unavailable:
 2. Record the switch in `BUILD_LOG.md`
 3. Keep prompts and outcomes visible so anyone can audit decisions later
 
+
+## Data source status (current)
+- **Real-source-backed now:** `2025 season totals` (served from a checked-in local artifact derived from nflverse `stats_player_reg_2025.csv`).
+- **Still mocked in this phase:** 2025 PPR finish, KTC rank, KTC value, Dynasty Data Lab ADP, Dynasty Data Lab value.
+
 ## Local development
 1. Install dependencies:
    ```bash
