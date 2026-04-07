@@ -24,7 +24,7 @@ function renderPlayerCard(player) {
         <div><span class="label">2025 season totals</span><span class="value">${formatValue(player.seasonTotals2025)}</span></div>
       </div>
       <p class="note">
-        Sources: ${formatValue(player.sourceLabels.ktc)}, ${formatValue(player.sourceLabels.dynastyDataLab)}, ${formatValue(player.sourceLabels.pprFinish)}.
+        Sources: ${formatValue(player.sourceLabels.ktc)}, ${formatValue(player.sourceLabels.dynastyDataLab)}, ${formatValue(player.sourceLabels.pprFinish)}, ${formatValue(player.sourceLabels.seasonTotals)}.
       </p>
     </article>
   `;

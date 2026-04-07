@@ -51,3 +51,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a runnable Node/Express app with a simple search UI and `/api/players?name=` route backed by isolated mock data (including Drake London), plus explicit MVP response contract fields and unavailable handling in UI.
 - **Notes/issues:** Data values are intentionally mocked placeholders for MVP wiring only and are labeled as mock in visible source labels.
+
+### 2026-04-07 — Season totals moved from mock to real-source-backed path
+- **Date:** 2026-04-07
+- **Goal:** Replace mocked `2025 season totals` in the player card flow with one real-source-backed path while leaving KTC and Dynasty Data Lab fields mocked.
+- **Prompt used:** “Build the next PR… replacing one part of the mocked player card flow with one real data source path… keep the rest intact.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/mockPlayers.js`
+  - `src/data/sources/seasonTotals2025.nflverse.json`
+  - `src/data/seasonTotals2025.js`
+  - `src/api/lookupPlayer.js`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a simple adapter path that resolves `seasonTotals2025` from a checked-in local artifact derived from nflverse 2025 regular-season player stats; all other player card data remains mocked.
+- **Notes/issues:** Kept the season totals source explicit in `sourceLabels` and UI source text. Missing totals still return `null` and render as “unavailable”.

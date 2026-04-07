@@ -1,0 +1,27 @@
+{
+  "source": {
+    "name": "nflverse stats_player_reg_2025.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
+    "derivedAt": "2026-04-07"
+  },
+  "players": [
+    {
+      "playerName": "Drake London",
+      "receptions": 68,
+      "receivingYards": 919,
+      "receivingTds": 7
+    },
+    {
+      "playerName": "Garrett Wilson",
+      "receptions": 36,
+      "receivingYards": 395,
+      "receivingTds": 4
+    },
+    {
+      "playerName": "Brock Bowers",
+      "receptions": 64,
+      "receivingYards": 680,
+      "receivingTds": 7
+    }
+  ]
+}
