@@ -1,5 +1,6 @@
 const SOURCE_LABELS = {
-  pprFinish: 'Public season stats (mock)',
+  pprFinish:
+    'nflverse stats_player_reg_2025.csv (real, local artifact; rank by fantasy_points_ppr within position)',
   ktc: 'KeepTradeCut (mock)',
   dynastyDataLab: 'Dynasty Data Lab (mock)',
   seasonTotals: 'nflverse stats_player_reg_2025.csv (real, local artifact)'
@@ -11,7 +12,7 @@ const MOCK_PLAYERS = [
     playerName: 'Drake London',
     position: 'WR',
     team: 'ATL',
-    pprFinish2025: 11,
+    pprFinish2025: null,
     ktcRank: 18,
     ktcValue: 6210,
     dynastyDataLabAdp: 20.4,
@@ -23,7 +24,7 @@ const MOCK_PLAYERS = [
     playerName: 'Garrett Wilson',
     position: 'WR',
     team: 'NYJ',
-    pprFinish2025: 8,
+    pprFinish2025: null,
     ktcRank: 12,
     ktcValue: 7015,
     dynastyDataLabAdp: 14.2,

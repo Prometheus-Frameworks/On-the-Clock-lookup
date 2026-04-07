@@ -1,0 +1,28 @@
+{
+  "source": {
+    "name": "nflverse stats_player_reg_2025.csv",
+    "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
+    "derivedAt": "2026-04-07",
+    "derivation": "Position finish is rank within position by fantasy_points_ppr (descending)."
+  },
+  "players": [
+    {
+      "playerName": "Drake London",
+      "position": "WR",
+      "fantasyPointsPpr": 201.9,
+      "pprFinish": 19
+    },
+    {
+      "playerName": "Garrett Wilson",
+      "position": "WR",
+      "fantasyPointsPpr": 99.5,
+      "pprFinish": 62
+    },
+    {
+      "playerName": "Brock Bowers",
+      "position": "TE",
+      "fantasyPointsPpr": 176.2,
+      "pprFinish": 11
+    }
+  ]
+}

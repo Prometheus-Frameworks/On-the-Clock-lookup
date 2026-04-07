@@ -1,4 +1,5 @@
 const { MOCK_PLAYERS } = require('../data/mockPlayers');
+const { resolvePprFinish2025 } = require('../data/pprFinish2025');
 const { resolveSeasonTotals2025 } = require('../data/seasonTotals2025');
 
 function findPlayerByName(nameQuery) {
@@ -22,6 +23,7 @@ function findPlayerByName(nameQuery) {
 
   return {
     ...basePlayer,
+    pprFinish2025: resolvePprFinish2025(basePlayer.playerName),
     seasonTotals2025: resolveSeasonTotals2025(basePlayer.playerName)
   };
 }
