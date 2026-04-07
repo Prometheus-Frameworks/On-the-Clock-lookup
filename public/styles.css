@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f6f7f8;
+  color: #1d1d1f;
+}
+
+.container {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  margin-top: -0.25rem;
+  color: #555;
+}
+
+.search-form {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.search-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+input {
+  flex: 1;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+button {
+  border: 1px solid #1d4ed8;
+  background: #1d4ed8;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  cursor: pointer;
+}
+
+.player-card {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.player-card h2 {
+  margin: 0 0 0.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #9b1c1c;
+}

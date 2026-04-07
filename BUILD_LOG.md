@@ -31,3 +31,23 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `PROJECT_SCOPE.md`
 - **Result:** Foundation documentation created; MVP expectations, non-goals, and build-in-public process are now documented.
 - **Notes/issues:** Assumed “2025 season totals” refers to finalized season stat lines from public sources, displayed as plain totals without derived scoring logic.
+
+### 2026-04-07 — MVP vertical slice: mocked player lookup app
+- **Date:** 2026-04-07
+- **Goal:** Implement the first working end-to-end MVP slice with a frontend search flow, backend lookup route, and mocked player data.
+- **Prompt used:** “Build the first real PR for this project by implementing the smallest possible working vertical slice of the MVP…” (full prompt in chat task context).
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `package.json`
+  - `package-lock.json`
+  - `src/server.js`
+  - `src/api/lookupPlayer.js`
+  - `src/data/mockPlayers.js`
+  - `src/data/playerContract.js`
+  - `public/index.html`
+  - `public/styles.css`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a runnable Node/Express app with a simple search UI and `/api/players?name=` route backed by isolated mock data (including Drake London), plus explicit MVP response contract fields and unavailable handling in UI.
+- **Notes/issues:** Data values are intentionally mocked placeholders for MVP wiring only and are labeled as mock in visible source labels.

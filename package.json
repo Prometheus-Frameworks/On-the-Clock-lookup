@@ -1,0 +1,19 @@
+{
+  "name": "on-the-clock-lookup",
+  "version": "0.1.0",
+  "description": "Simple fantasy football player lookup MVP",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "fantasy-football",
+    "lookup",
+    "mvp"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
