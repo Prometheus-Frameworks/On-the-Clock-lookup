@@ -83,3 +83,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a local real-source-backed adapter for `pprFinish2025` using nflverse-derived data and wired it into lookup responses; UI now shows a dedicated PPR source label while preserving unavailable behavior for missing PPR values.
 - **Notes/issues:** PPR finish is represented as positional finish derived by sorting `fantasy_points_ppr` within each position from nflverse 2025 regular-season stats.
+
+### 2026-04-07 — KTC rank/value moved from mock to real-source-backed local artifact path
+- **Date:** 2026-04-07
+- **Goal:** Replace mocked KTC rank/value with a real-source-backed path while leaving Dynasty Data Lab fields mocked.
+- **Prompt used:** “Build the next PR… replacing the mocked KTC fields with a real-source-backed implementation, while keeping the rest of the app structure intact.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/ktcValues.1qb.json`
+  - `src/data/ktcValues.js`
+  - `src/api/lookupPlayer.js`
+  - `src/data/mockPlayers.js`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a small KTC adapter that resolves `ktcRank` and `ktcValue` from a checked-in local artifact (KeepTradeCut 1QB snapshot path), wired into lookup responses, and clearly labeled in both API source labels and player card UI.
+- **Notes/issues:** KeepTradeCut direct live fetch/scrape was not used in this step; artifact was derived from the public `flamjammy/dynastykit-ktc-scraper` snapshot (`docs/ktc_1qb.csv`, updated 2026-04-07 UTC). Missing KTC entries still return `null` and render as “unavailable”. Dynasty Data Lab fields remain mocked.

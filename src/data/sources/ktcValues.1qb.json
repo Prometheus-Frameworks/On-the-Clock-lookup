@@ -1,0 +1,24 @@
+{
+  "source": "KeepTradeCut dynasty rankings (1QB)",
+  "sourceType": "real, local artifact",
+  "artifactDerivedFrom": "flamjammy/dynastykit-ktc-scraper docs/ktc_1qb.csv",
+  "artifactUpdatedAtUtc": "2026-04-07T19:11:00Z",
+  "notes": "Overall rank is the 1-indexed row order from the KTC 1QB rankings snapshot after removing the two metadata header rows.",
+  "players": [
+    {
+      "playerName": "Brock Bowers",
+      "ktcRank": 7,
+      "ktcValue": 7981
+    },
+    {
+      "playerName": "Drake London",
+      "ktcRank": 16,
+      "ktcValue": 7408
+    },
+    {
+      "playerName": "Garrett Wilson",
+      "ktcRank": 31,
+      "ktcValue": 6427
+    }
+  ]
+}

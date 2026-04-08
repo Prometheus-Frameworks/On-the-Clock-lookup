@@ -65,8 +65,10 @@ If one AI coding/review agent is unavailable:
 
 
 ## Data source status (current)
-- **Real-source-backed now:** `2025 PPR finish` and `2025 season totals` (both served from checked-in local artifacts derived from nflverse `stats_player_reg_2025.csv`).
-- **Still mocked in this phase:** KTC rank, KTC value, Dynasty Data Lab ADP, Dynasty Data Lab value.
+- **Real-source-backed now:**
+  - `2025 PPR finish` and `2025 season totals` (served from checked-in local artifacts derived from nflverse `stats_player_reg_2025.csv`).
+  - `KTC rank` and `KTC value` (served from a checked-in local artifact derived from a KeepTradeCut 1QB snapshot from `flamjammy/dynastykit-ktc-scraper`, updated 2026-04-07 UTC).
+- **Still mocked in this phase:** Dynasty Data Lab ADP, Dynasty Data Lab value.
 
 ## Local development
 1. Install dependencies:
