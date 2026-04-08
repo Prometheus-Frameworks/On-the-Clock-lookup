@@ -100,12 +100,15 @@ That guide documents for each artifact:
    - Brock Bowers
    - Bijan Robinson
    - CeeDee Lamb
-   - Jahmyr Gibbs
-   - Puka Nacua
    - Jayden Daniels
-   - C.J. Stroud
+   - Baker Mayfield
+   - D'Andre Swift
+   - Amon-Ra St. Brown
+   - Jaxon Smith-Njigba
+   - Brian Thomas Jr.
+   - Dalton Kincaid
 
-Note: local artifacts now cover nflverse + KTC fields for the expanded 9-player pool. The current `2025 season totals` card field is receiving-style only, so QB totals may intentionally render as `unavailable` until position-specific totals formatting is added. Dynasty Data Lab ADP/value also remains a smaller subset when rows are not yet captured in the checked-in artifact.
+Note: the local player pool is now intentionally broader (23 players) than current checked-in artifact coverage, so some players will return partial cards with `unavailable` values. This is expected for stress-testing search behavior, source coverage transparency, and edge-case name handling.
 
 ## Public build log process
 Future build prompts and meaningful build steps are logged in `BUILD_LOG.md`.

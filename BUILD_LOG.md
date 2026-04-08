@@ -213,3 +213,15 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Updated the checked-in Dynasty Data Lab artifact to include explicit rows for all nine local pool players while preserving existing source-backed ADP/value values and null handling for unavailable fields.
 - **Notes/issues:** Dynasty Data Lab domain access remains blocked from this execution environment (HTTP 403), so additional ADP/value numbers beyond the previously captured rows could not be freshly retrieved in this pass.
+
+### 2026-04-08 — Controlled local pool expansion for stress-testing search + coverage rough edges
+- **Date:** 2026-04-08
+- **Goal:** Expand the local player pool in a controlled way to stress-test search behavior, coverage transparency, and awkward-name handling without changing app structure.
+- **Prompt used:** “Build the next PR for this project by expanding the local player pool in a controlled way so we can stress test how the current app behaves with a wider and slightly messier set of players.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/mockPlayers.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Expanded the local pool from 9 to 23 players with a deliberately mixed set across QB/RB/WR/TE, including less-obvious fantasy names and punctuation/format edge cases (for example hyphenated and suffix-style names). Kept lookup/card/source/coverage/no-match UX behavior unchanged.
+- **Notes/issues:** No artifact expansion in this step by design; newly added players can legitimately render `unavailable` for source-backed fields where artifact rows do not exist yet.
