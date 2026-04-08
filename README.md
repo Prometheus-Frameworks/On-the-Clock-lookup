@@ -22,6 +22,7 @@ The card shows these exact fields:
 - 2025 season totals in a simple format
   - WR/TE format in MVP: receptions / yards / touchdowns
   - wording and formatting should stay flexible so position-specific layouts can expand later
+- A compact coverage line based on those six data fields (for example: “Coverage: 5 of 6 fields available”), so users can quickly tell whether a card is mostly complete or partial
 
 ## MVP: what it explicitly does NOT do
 This MVP is intentionally limited. It does **not** include:
