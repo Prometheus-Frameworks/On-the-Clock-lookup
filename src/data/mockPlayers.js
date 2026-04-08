@@ -47,6 +47,71 @@ const MOCK_PLAYERS = [
     playerName: 'C.J. Stroud',
     position: 'QB',
     team: 'HOU'
+  },
+  {
+    playerName: 'Baker Mayfield',
+    position: 'QB',
+    team: 'TB'
+  },
+  {
+    playerName: 'Kyler Murray',
+    position: 'QB',
+    team: 'ARI'
+  },
+  {
+    playerName: "D'Andre Swift",
+    position: 'RB',
+    team: 'CHI'
+  },
+  {
+    playerName: 'Rhamondre Stevenson',
+    position: 'RB',
+    team: 'NE'
+  },
+  {
+    playerName: 'Tyjae Spears',
+    position: 'RB',
+    team: 'TEN'
+  },
+  {
+    playerName: 'Amon-Ra St. Brown',
+    position: 'WR',
+    team: 'DET'
+  },
+  {
+    playerName: 'DK Metcalf',
+    position: 'WR',
+    team: 'SEA'
+  },
+  {
+    playerName: 'Jaxon Smith-Njigba',
+    position: 'WR',
+    team: 'SEA'
+  },
+  {
+    playerName: 'Rome Odunze',
+    position: 'WR',
+    team: 'CHI'
+  },
+  {
+    playerName: 'Brian Thomas Jr.',
+    position: 'WR',
+    team: 'JAX'
+  },
+  {
+    playerName: 'Rashid Shaheed',
+    position: 'WR',
+    team: 'NO'
+  },
+  {
+    playerName: 'Dalton Kincaid',
+    position: 'TE',
+    team: 'BUF'
+  },
+  {
+    playerName: 'Pat Freiermuth',
+    position: 'TE',
+    team: 'PIT'
   }
 ];
 
