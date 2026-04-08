@@ -20,6 +20,21 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-08 — Not-found/search-result UX improvements with simple local suggestions
+- **Date:** 2026-04-08
+- **Goal:** Improve the not-found and weak-query search-result experience while keeping the existing MVP player card unchanged.
+- **Prompt used:** “Build the next PR for this project by improving the not-found and search-result UX, while keeping the app simple and the current MVP card unchanged.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/api/lookupPlayer.js`
+  - `src/server.js`
+  - `public/app.js`
+  - `public/styles.css`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added explicit no-match metadata (`reason` + up to 3 suggestions from local players), added small deterministic close-name suggestion logic, and upgraded frontend no-match rendering with plain-language guidance for short/broad/no-local-match queries.
+- **Notes/issues:** Successful-match flow and player card fields/layout/source transparency/coverage line were preserved unchanged.
+
 ### 2026-04-08 — Player card coverage-awareness UX line
 - **Date:** 2026-04-08
 - **Goal:** Add a small, honest coverage-awareness indicator to the MVP player card so users can quickly see how complete the current result is.

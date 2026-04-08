@@ -10,6 +10,8 @@ This project is also a build-in-public example. The workflow and decisions are d
 ## MVP: what it does
 For v1 (MVP), a user types a player name and gets a compact player card.
 
+If a query does not resolve cleanly, the app now returns a simple not-found state with plain-language guidance and up to 3 close suggestions from the local player pool.
+
 The card shows these exact fields:
 - Player name
 - Position

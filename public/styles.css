@@ -93,3 +93,25 @@ button {
   margin-top: 1rem;
   color: #9b1c1c;
 }
+
+.search-feedback {
+  margin-top: 1rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.result-help {
+  margin: 0.5rem 0 0;
+  color: #374151;
+}
+
+.suggestions ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.suggestions li {
+  margin: 0.2rem 0;
+}

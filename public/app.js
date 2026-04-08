@@ -67,6 +67,42 @@ function renderPlayerCard(player) {
   `;
 }
 
+function getNoMatchMessage(reason, query) {
+  if (reason === 'query_too_short') {
+    return 'That search is very short. Try at least 3 letters or a full name.';
+  }
+
+  if (reason === 'query_too_broad') {
+    return `"${query}" is broad. Try first and last name for a better match.`;
+  }
+
+  return `No local player found for "${query}".`;
+}
+
+function renderSuggestions(suggestions) {
+  if (!suggestions || suggestions.length === 0) {
+    return '<p class="result-help">No close local suggestions yet. Try full first + last name.</p>';
+  }
+
+  const listItems = suggestions.map((name) => `<li>${name}</li>`).join('');
+
+  return `
+    <div class="suggestions">
+      <p class="result-help">Did you mean:</p>
+      <ul>${listItems}</ul>
+    </div>
+  `;
+}
+
+function renderNoMatchState(query, resultMeta) {
+  return `
+    <article class="search-feedback">
+      <p class="error">${getNoMatchMessage(resultMeta?.reason, query)}</p>
+      ${renderSuggestions(resultMeta?.suggestions)}
+    </article>
+  `;
+}
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
@@ -87,7 +123,7 @@ form.addEventListener('submit', async (event) => {
     }
 
     if (!payload.player) {
-      result.innerHTML = `<p class="error">No mock player found for "${query}".</p>`;
+      result.innerHTML = renderNoMatchState(query, payload.resultMeta);
       return;
     }
 

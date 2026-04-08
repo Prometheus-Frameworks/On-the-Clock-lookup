@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const { findPlayerByName } = require('./api/lookupPlayer');
+const { lookupPlayer } = require('./api/lookupPlayer');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,11 +16,12 @@ app.get('/api/players', (req, res) => {
     });
   }
 
-  const player = findPlayerByName(name);
+  const { player, resultMeta } = lookupPlayer(name);
 
   return res.json({
     query: name,
-    player
+    player,
+    resultMeta
   });
 });
 
