@@ -131,3 +131,16 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a small explicit response-builder contract helper, removed repetitive per-field source rows while keeping a transparent source summary footer, and documented concrete refresh workflows for every checked-in artifact.
 - **Notes/issues:** No product features added; card fields and lookup behavior remain unchanged aside from cleaner source-label presentation.
+
+### 2026-04-08 — Search quality improvement + modest player pool expansion
+- **Date:** 2026-04-08
+- **Goal:** Improve player lookup matching behavior and expand the local player pool while keeping the MVP card unchanged.
+- **Prompt used:** “Build the next PR for this project by improving search quality and slightly expanding player coverage, while keeping the app simple and the existing MVP card unchanged.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/api/lookupPlayer.js`
+  - `src/data/mockPlayers.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added deterministic staged matching (case-insensitive exact, normalized exact, normalized prefix, normalized containment) with simple name normalization; expanded local player pool from 3 to 9 players; preserved card fields/layout and existing unavailable behavior for missing source-backed fields.
+- **Notes/issues:** Did not expand source artifacts in this step; newly added players are intentionally discoverable in search but can show `unavailable` where source-backed values are not yet present.
