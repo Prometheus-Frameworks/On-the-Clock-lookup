@@ -17,6 +17,36 @@ const MOCK_PLAYERS = [
     playerName: 'Brock Bowers',
     position: 'TE',
     team: 'LV'
+  },
+  {
+    playerName: 'Bijan Robinson',
+    position: 'RB',
+    team: 'ATL'
+  },
+  {
+    playerName: 'CeeDee Lamb',
+    position: 'WR',
+    team: 'DAL'
+  },
+  {
+    playerName: 'Jahmyr Gibbs',
+    position: 'RB',
+    team: 'DET'
+  },
+  {
+    playerName: 'Puka Nacua',
+    position: 'WR',
+    team: 'LAR'
+  },
+  {
+    playerName: 'Jayden Daniels',
+    position: 'QB',
+    team: 'WAS'
+  },
+  {
+    playerName: 'C.J. Stroud',
+    position: 'QB',
+    team: 'HOU'
   }
 ];
 

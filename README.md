@@ -91,10 +91,18 @@ That guide documents for each artifact:
    ```bash
    npm run dev
    ```
-3. Open `http://localhost:3000` and search for one of the mock sample players:
+3. Open `http://localhost:3000` and search for one of the local sample players:
    - Drake London
    - Garrett Wilson
    - Brock Bowers
+   - Bijan Robinson
+   - CeeDee Lamb
+   - Jahmyr Gibbs
+   - Puka Nacua
+   - Jayden Daniels
+   - C.J. Stroud
+
+Note: the original MVP trio currently has complete source-backed values in local artifacts. Newly added players may return `unavailable` for some fields until source artifacts are expanded in a later step.
 
 ## Public build log process
 Future build prompts and meaningful build steps are logged in `BUILD_LOG.md`.
