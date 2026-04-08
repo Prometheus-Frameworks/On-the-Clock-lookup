@@ -20,6 +20,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-08 — Player card coverage-awareness UX line
+- **Date:** 2026-04-08
+- **Goal:** Add a small, honest coverage-awareness indicator to the MVP player card so users can quickly see how complete the current result is.
+- **Prompt used:** “Build the next PR for this project by adding a small coverage-awareness UX improvement so users can better understand when a player card has partial data coverage.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `public/app.js`
+  - `public/styles.css`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a compact coverage summary line on the player card that counts availability across the six MVP data fields and displays plain-language status (full, broad, or partial coverage) grounded in the count.
+- **Notes/issues:** Kept UI structure and existing field rendering unchanged; missing values still render as `unavailable`.
+
 ### 2026-04-07 — Project foundation documents created
 - **Date:** 2026-04-07
 - **Goal:** Establish project foundation docs before app implementation.

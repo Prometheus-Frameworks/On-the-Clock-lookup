@@ -18,10 +18,38 @@ function renderSourceSummary(sourceLabels) {
   ].join(' • ');
 }
 
+function isFieldAvailable(value) {
+  return !(value === null || value === undefined || value === '');
+}
+
+function getCoverageSummary(player) {
+  const coverageFields = [
+    player.pprFinish2025,
+    player.ktcRank,
+    player.ktcValue,
+    player.dynastyDataLabAdp,
+    player.dynastyDataLabValue,
+    player.seasonTotals2025
+  ];
+
+  const availableCount = coverageFields.filter((value) => isFieldAvailable(value)).length;
+  const totalCount = coverageFields.length;
+
+  let statusText = 'partial coverage';
+  if (availableCount === totalCount) {
+    statusText = 'full coverage';
+  } else if (availableCount >= totalCount - 1) {
+    statusText = 'broad coverage';
+  }
+
+  return `Coverage: ${availableCount} of ${totalCount} fields available (${statusText}).`;
+}
+
 function renderPlayerCard(player) {
   return `
     <article class="player-card">
       <h2>${player.playerName}</h2>
+      <p class="coverage">${getCoverageSummary(player)}</p>
       <div class="grid">
         <div><span class="label">Position</span><span class="value">${formatValue(player.position)}</span></div>
         <div><span class="label">Team</span><span class="value">${formatValue(player.team)}</span></div>
