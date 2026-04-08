@@ -20,6 +20,7 @@ function renderPlayerCard(player) {
         <div><span class="label">2025 PPR source</span><span class="value">${formatValue(player.sourceLabels.pprFinish)}</span></div>
         <div><span class="label">KTC rank</span><span class="value">${formatValue(player.ktcRank)}</span></div>
         <div><span class="label">KTC value</span><span class="value">${formatValue(player.ktcValue)}</span></div>
+        <div><span class="label">KTC source</span><span class="value">${formatValue(player.sourceLabels.ktc)}</span></div>
         <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(player.dynastyDataLabAdp)}</span></div>
         <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(player.dynastyDataLabValue)}</span></div>
         <div><span class="label">2025 season totals</span><span class="value">${formatValue(player.seasonTotals2025)}</span></div>

@@ -1,6 +1,7 @@
 const { MOCK_PLAYERS } = require('../data/mockPlayers');
 const { resolvePprFinish2025 } = require('../data/pprFinish2025');
 const { resolveSeasonTotals2025 } = require('../data/seasonTotals2025');
+const { resolveKtcValues } = require('../data/ktcValues');
 
 function findPlayerByName(nameQuery) {
   if (!nameQuery || typeof nameQuery !== 'string') {
@@ -21,9 +22,13 @@ function findPlayerByName(nameQuery) {
     return null;
   }
 
+  const ktcValues = resolveKtcValues(basePlayer.playerName);
+
   return {
     ...basePlayer,
     pprFinish2025: resolvePprFinish2025(basePlayer.playerName),
+    ktcRank: ktcValues.ktcRank,
+    ktcValue: ktcValues.ktcValue,
     seasonTotals2025: resolveSeasonTotals2025(basePlayer.playerName)
   };
 }
