@@ -29,7 +29,7 @@ Use this guide when refreshing the artifacts.
 
 ### How this artifact was derived
 1. Start from nflverse `stats_player_reg_2025.csv`.
-2. Filter to players in the current local 9-player pool (`Drake London`, `Garrett Wilson`, `Brock Bowers`, `Bijan Robinson`, `CeeDee Lamb`, `Jahmyr Gibbs`, `Puka Nacua`, `Jayden Daniels`, `C.J. Stroud`).
+2. Filter to players in the current local pool where receiving-style totals are meaningful for the current card format (currently: `Drake London`, `Garrett Wilson`, `Brock Bowers`, `Bijan Robinson`, `CeeDee Lamb`, `Jahmyr Gibbs`, `Puka Nacua`).
 3. Copy receiving totals into the JSON structure above.
 4. Update metadata date/source notes.
 
@@ -38,7 +38,8 @@ Use this guide when refreshing the artifacts.
 2. Rebuild or manually update only the required player rows.
 3. Preserve existing key names and number types.
 4. Save to `src/data/sources/seasonTotals2025.nflverse.json`.
-5. Run local app checks and verify the card still renders expected totals.
+5. Keep QB entries out of this artifact until position-specific totals formatting is introduced; let those players render `unavailable` for this field.
+6. Run local app checks and verify the card still renders expected totals.
 
 ---
 
