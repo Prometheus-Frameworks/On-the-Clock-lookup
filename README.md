@@ -102,7 +102,7 @@ That guide documents for each artifact:
    - Jayden Daniels
    - C.J. Stroud
 
-Note: the original MVP trio currently has complete source-backed values in local artifacts. Newly added players may return `unavailable` for some fields until source artifacts are expanded in a later step.
+Note: local artifacts now cover nflverse + KTC fields for the expanded 9-player pool. Dynasty Data Lab ADP/value remains a smaller subset when those rows are not yet captured in the checked-in artifact; those fields intentionally render as `unavailable`.
 
 ## Public build log process
 Future build prompts and meaningful build steps are logged in `BUILD_LOG.md`.

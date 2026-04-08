@@ -2,7 +2,7 @@
   "source": {
     "name": "nflverse stats_player_reg_2025.csv",
     "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
-    "derivedAt": "2026-04-07"
+    "derivedAt": "2026-04-08"
   },
   "players": [
     {
@@ -22,6 +22,42 @@
       "receptions": 64,
       "receivingYards": 680,
       "receivingTds": 7
+    },
+    {
+      "playerName": "Bijan Robinson",
+      "receptions": 79,
+      "receivingYards": 820,
+      "receivingTds": 4
+    },
+    {
+      "playerName": "CeeDee Lamb",
+      "receptions": 75,
+      "receivingYards": 1077,
+      "receivingTds": 3
+    },
+    {
+      "playerName": "Jahmyr Gibbs",
+      "receptions": 77,
+      "receivingYards": 616,
+      "receivingTds": 5
+    },
+    {
+      "playerName": "Puka Nacua",
+      "receptions": 129,
+      "receivingYards": 1715,
+      "receivingTds": 10
+    },
+    {
+      "playerName": "Jayden Daniels",
+      "receptions": 0,
+      "receivingYards": 0,
+      "receivingTds": 0
+    },
+    {
+      "playerName": "C.J. Stroud",
+      "receptions": 0,
+      "receivingYards": 0,
+      "receivingTds": 0
     }
   ]
 }
