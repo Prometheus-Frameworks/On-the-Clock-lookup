@@ -99,3 +99,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a small KTC adapter that resolves `ktcRank` and `ktcValue` from a checked-in local artifact (KeepTradeCut 1QB snapshot path), wired into lookup responses, and clearly labeled in both API source labels and player card UI.
 - **Notes/issues:** KeepTradeCut direct live fetch/scrape was not used in this step; artifact was derived from the public `flamjammy/dynastykit-ktc-scraper` snapshot (`docs/ktc_1qb.csv`, updated 2026-04-07 UTC). Missing KTC entries still return `null` and render as “unavailable”. Dynasty Data Lab fields remain mocked.
+
+### 2026-04-08 — Dynasty Data Lab ADP/value moved from mock to real-source-backed local artifact path
+- **Date:** 2026-04-08
+- **Goal:** Replace mocked Dynasty Data Lab ADP/value fields with a real-source-backed path while preserving current lookup and card structure.
+- **Prompt used:** “Build the next PR for this project by replacing the remaining mocked Dynasty Data Lab fields with a real-source-backed implementation, while keeping the rest of the app structure intact.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/dynastyDataLab.adpValue.json`
+  - `src/data/dynastyDataLabValues.js`
+  - `src/api/lookupPlayer.js`
+  - `src/data/mockPlayers.js`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a Dynasty Data Lab adapter that resolves ADP/value from a checked-in local artifact snapshot and wired it into API lookup responses, with explicit source labeling in API payload and UI and unchanged unavailable behavior for missing values.
+- **Notes/issues:** Used a local artifact snapshot path (not live scraping) to keep implementation inspectable and stable; artifact metadata records format and snapshot date.
