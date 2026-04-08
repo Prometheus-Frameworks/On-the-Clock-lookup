@@ -2,7 +2,7 @@
   "source": {
     "name": "nflverse stats_player_reg_2025.csv",
     "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
-    "derivedAt": "2026-04-07",
+    "derivedAt": "2026-04-08",
     "derivation": "Position finish is rank within position by fantasy_points_ppr (descending)."
   },
   "players": [
@@ -23,6 +23,42 @@
       "position": "TE",
       "fantasyPointsPpr": 176.2,
       "pprFinish": 11
+    },
+    {
+      "playerName": "Bijan Robinson",
+      "position": "RB",
+      "fantasyPointsPpr": 370.8,
+      "pprFinish": 2
+    },
+    {
+      "playerName": "CeeDee Lamb",
+      "position": "WR",
+      "fantasyPointsPpr": 200.9,
+      "pprFinish": 22
+    },
+    {
+      "playerName": "Jahmyr Gibbs",
+      "position": "RB",
+      "fantasyPointsPpr": 366.9,
+      "pprFinish": 3
+    },
+    {
+      "playerName": "Puka Nacua",
+      "position": "WR",
+      "fantasyPointsPpr": 375.0,
+      "pprFinish": 1
+    },
+    {
+      "playerName": "Jayden Daniels",
+      "position": "QB",
+      "fantasyPointsPpr": 114.28,
+      "pprFinish": 34
+    },
+    {
+      "playerName": "C.J. Stroud",
+      "position": "QB",
+      "fantasyPointsPpr": 208.54,
+      "pprFinish": 21
     }
   ]
 }

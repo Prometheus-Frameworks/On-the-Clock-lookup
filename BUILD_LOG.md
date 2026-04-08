@@ -144,3 +144,32 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added deterministic staged matching (case-insensitive exact, normalized exact, normalized prefix, normalized containment) with simple name normalization; expanded local player pool from 3 to 9 players; preserved card fields/layout and existing unavailable behavior for missing source-backed fields.
 - **Notes/issues:** Did not expand source artifacts in this step; newly added players are intentionally discoverable in search but can show `unavailable` where source-backed values are not yet present.
+
+### 2026-04-08 — Expanded artifact coverage for the 9-player local pool
+- **Date:** 2026-04-08
+- **Goal:** Improve source-backed field coverage for the expanded nine-player local pool while keeping the existing MVP card and response contract unchanged.
+- **Prompt used:** “Build the next PR for this project by improving data coverage for the expanded 9-player local pool, while keeping the app simple and the existing MVP card unchanged.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/pprFinish2025.nflverse.json`
+  - `src/data/sources/seasonTotals2025.nflverse.json`
+  - `src/data/sources/ktcValues.1qb.json`
+  - `docs/ARTIFACT_REFRESH.md`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Expanded checked-in nflverse and KTC artifacts from the original core trio to the full nine-player local pool, so newly added players now return source-backed values for PPR finish, season totals, and KTC rank/value. Dynasty Data Lab artifact remains a partial subset and still returns `unavailable` where rows are missing.
+- **Notes/issues:** Dynasty Data Lab public site access was unavailable from this environment during this pass, so no new Dynasty Data Lab rows were added; existing null/unavailable behavior was preserved.
+
+
+### 2026-04-08 — Follow-up fix: QB season totals set back to unavailable in receiving-style card format
+- **Date:** 2026-04-08
+- **Goal:** Address PR feedback by removing misleading QB receiving stat lines from the `2025 season totals` artifact so the current MVP card remains semantically honest.
+- **Prompt used:** Follow-up implementation request to address inline PR comments and fix blocker on QB season totals semantics.
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/seasonTotals2025.nflverse.json`
+  - `docs/ARTIFACT_REFRESH.md`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Removed Jayden Daniels and C.J. Stroud from the receiving-style season totals artifact so lookup returns `null` for this field and UI renders `unavailable` for those QBs under the current card shape.
+- **Notes/issues:** Kept scope narrow; no response contract or UI structure changes.

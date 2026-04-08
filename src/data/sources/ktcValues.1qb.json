@@ -2,23 +2,53 @@
   "source": "KeepTradeCut dynasty rankings (1QB)",
   "sourceType": "real, local artifact",
   "artifactDerivedFrom": "flamjammy/dynastykit-ktc-scraper docs/ktc_1qb.csv",
-  "artifactUpdatedAtUtc": "2026-04-07T19:11:00Z",
+  "artifactUpdatedAtUtc": "2026-04-08T07:41:00Z",
   "notes": "Overall rank is the 1-indexed row order from the KTC 1QB rankings snapshot after removing the two metadata header rows.",
   "players": [
     {
-      "playerName": "Brock Bowers",
-      "ktcRank": 7,
-      "ktcValue": 7981
-    },
-    {
       "playerName": "Drake London",
       "ktcRank": 16,
-      "ktcValue": 7408
+      "ktcValue": 7411
     },
     {
       "playerName": "Garrett Wilson",
       "ktcRank": 31,
-      "ktcValue": 6427
+      "ktcValue": 6411
+    },
+    {
+      "playerName": "Brock Bowers",
+      "ktcRank": 7,
+      "ktcValue": 7976
+    },
+    {
+      "playerName": "Bijan Robinson",
+      "ktcRank": 2,
+      "ktcValue": 9996
+    },
+    {
+      "playerName": "CeeDee Lamb",
+      "ktcRank": 12,
+      "ktcValue": 7796
+    },
+    {
+      "playerName": "Jahmyr Gibbs",
+      "ktcRank": 4,
+      "ktcValue": 9968
+    },
+    {
+      "playerName": "Puka Nacua",
+      "ktcRank": 5,
+      "ktcValue": 9416
+    },
+    {
+      "playerName": "Jayden Daniels",
+      "ktcRank": 37,
+      "ktcValue": 6267
+    },
+    {
+      "playerName": "C.J. Stroud",
+      "ktcRank": 133,
+      "ktcValue": 3946
     }
   ]
 }

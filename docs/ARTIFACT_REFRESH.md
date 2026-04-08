@@ -29,7 +29,7 @@ Use this guide when refreshing the artifacts.
 
 ### How this artifact was derived
 1. Start from nflverse `stats_player_reg_2025.csv`.
-2. Filter to players in the MVP pool (`Drake London`, `Garrett Wilson`, `Brock Bowers`).
+2. Filter to players in the current local pool where receiving-style totals are meaningful for the current card format (currently: `Drake London`, `Garrett Wilson`, `Brock Bowers`, `Bijan Robinson`, `CeeDee Lamb`, `Jahmyr Gibbs`, `Puka Nacua`).
 3. Copy receiving totals into the JSON structure above.
 4. Update metadata date/source notes.
 
@@ -38,7 +38,8 @@ Use this guide when refreshing the artifacts.
 2. Rebuild or manually update only the required player rows.
 3. Preserve existing key names and number types.
 4. Save to `src/data/sources/seasonTotals2025.nflverse.json`.
-5. Run local app checks and verify the card still renders expected totals.
+5. Keep QB entries out of this artifact until position-specific totals formatting is introduced; let those players render `unavailable` for this field.
+6. Run local app checks and verify the card still renders expected totals.
 
 ---
 
@@ -86,7 +87,7 @@ Use this guide when refreshing the artifacts.
 
 ### How this artifact was derived
 1. Pull a recent `docs/ktc_1qb.csv` snapshot from the scraper repo.
-2. Locate rows for MVP players.
+2. Locate rows for current local pool players.
 3. Copy rank/value into local JSON structure.
 4. Set/update snapshot date in metadata.
 
@@ -114,12 +115,12 @@ Use this guide when refreshing the artifacts.
 
 ### How this artifact was derived
 1. Open Dynasty Data Lab public startup ADP/value table in Superflex format.
-2. Capture MVP player rows.
+2. Capture current local pool player rows when available.
 3. Copy ADP/value into local JSON structure with metadata snapshot date.
 
 ### How to refresh later
 1. Open the latest public Dynasty Data Lab startup ADP/value view (Superflex).
-2. Update rows for MVP players in `src/data/sources/dynastyDataLab.adpValue.json`.
+2. Update rows for current local pool players in `src/data/sources/dynastyDataLab.adpValue.json`.
 3. Keep missing values as `null` when not published.
 4. Update metadata snapshot date and source note.
 
@@ -129,5 +130,5 @@ Use this guide when refreshing the artifacts.
 1. Update artifact JSON file(s).
 2. Keep adapter modules unchanged unless shape changed.
 3. Run local app checks.
-4. Validate player card output for all three sample players.
+4. Validate player card output for all nine local sample players.
 5. Add a `BUILD_LOG.md` entry including source snapshot dates.
