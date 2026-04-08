@@ -1,0 +1,23 @@
+{
+  "source": "Dynasty Data Lab dynasty startup ADP and trade value board",
+  "format": "Superflex",
+  "snapshotDate": "2026-04-08",
+  "retrievalMethod": "manual copy into local artifact from Dynasty Data Lab public player values/ADP table",
+  "players": [
+    {
+      "playerName": "Drake London",
+      "dynastyDataLabAdp": 20.4,
+      "dynastyDataLabValue": 6040
+    },
+    {
+      "playerName": "Garrett Wilson",
+      "dynastyDataLabAdp": 14.2,
+      "dynastyDataLabValue": null
+    },
+    {
+      "playerName": "Brock Bowers",
+      "dynastyDataLabAdp": 11.6,
+      "dynastyDataLabValue": 7280
+    }
+  ]
+}

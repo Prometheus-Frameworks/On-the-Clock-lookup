@@ -2,7 +2,8 @@ const SOURCE_LABELS = {
   pprFinish:
     'nflverse stats_player_reg_2025.csv (real, local artifact; rank by fantasy_points_ppr within position)',
   ktc: 'KeepTradeCut dynasty rankings (1QB; real, local artifact snapshot: 2026-04-07)',
-  dynastyDataLab: 'Dynasty Data Lab (mock)',
+  dynastyDataLab:
+    'Dynasty Data Lab dynasty startup ADP/value (Superflex; real, local artifact snapshot: 2026-04-08)',
   seasonTotals: 'nflverse stats_player_reg_2025.csv (real, local artifact)'
 };
 
@@ -15,8 +16,8 @@ const MOCK_PLAYERS = [
     pprFinish2025: null,
     ktcRank: null,
     ktcValue: null,
-    dynastyDataLabAdp: 20.4,
-    dynastyDataLabValue: 6040,
+    dynastyDataLabAdp: null,
+    dynastyDataLabValue: null,
     seasonTotals2025: null,
     sourceLabels: SOURCE_LABELS
   },
@@ -27,7 +28,7 @@ const MOCK_PLAYERS = [
     pprFinish2025: null,
     ktcRank: null,
     ktcValue: null,
-    dynastyDataLabAdp: 14.2,
+    dynastyDataLabAdp: null,
     dynastyDataLabValue: null,
     seasonTotals2025: null,
     sourceLabels: SOURCE_LABELS
@@ -39,8 +40,8 @@ const MOCK_PLAYERS = [
     pprFinish2025: null,
     ktcRank: null,
     ktcValue: null,
-    dynastyDataLabAdp: 11.6,
-    dynastyDataLabValue: 7280,
+    dynastyDataLabAdp: null,
+    dynastyDataLabValue: null,
     seasonTotals2025: null,
     sourceLabels: SOURCE_LABELS
   }
