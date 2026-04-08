@@ -115,3 +115,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Added a Dynasty Data Lab adapter that resolves ADP/value from a checked-in local artifact snapshot and wired it into API lookup responses, with explicit source labeling in API payload and UI and unchanged unavailable behavior for missing values.
 - **Notes/issues:** Used a local artifact snapshot path (not live scraping) to keep implementation inspectable and stable; artifact metadata records format and snapshot date.
+
+### 2026-04-08 — Cleanup/hardening pass: response contract, source-label UI cleanup, artifact refresh docs
+- **Date:** 2026-04-08
+- **Goal:** Tighten response contract assembly, reduce duplicated source-label clutter in the card UI, and add practical artifact refresh documentation.
+- **Prompt used:** “Build the next PR for this project as a cleanup and hardening pass now that the MVP card is fully real-source-backed…” (full prompt in chat task context).
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/playerContract.js`
+  - `src/data/mockPlayers.js`
+  - `src/api/lookupPlayer.js`
+  - `public/app.js`
+  - `docs/ARTIFACT_REFRESH.md`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a small explicit response-builder contract helper, removed repetitive per-field source rows while keeping a transparent source summary footer, and documented concrete refresh workflows for every checked-in artifact.
+- **Notes/issues:** No product features added; card fields and lookup behavior remain unchanged aside from cleaner source-label presentation.

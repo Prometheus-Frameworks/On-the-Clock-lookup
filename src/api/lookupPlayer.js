@@ -3,6 +3,7 @@ const { resolvePprFinish2025 } = require('../data/pprFinish2025');
 const { resolveSeasonTotals2025 } = require('../data/seasonTotals2025');
 const { resolveKtcValues } = require('../data/ktcValues');
 const { resolveDynastyDataLabValues } = require('../data/dynastyDataLabValues');
+const { createPlayerLookupResponse } = require('../data/playerContract');
 
 function findPlayerByName(nameQuery) {
   if (!nameQuery || typeof nameQuery !== 'string') {
@@ -26,7 +27,7 @@ function findPlayerByName(nameQuery) {
   const ktcValues = resolveKtcValues(basePlayer.playerName);
   const dynastyDataLabValues = resolveDynastyDataLabValues(basePlayer.playerName);
 
-  return {
+  return createPlayerLookupResponse({
     ...basePlayer,
     pprFinish2025: resolvePprFinish2025(basePlayer.playerName),
     ktcRank: ktcValues.ktcRank,
@@ -34,7 +35,7 @@ function findPlayerByName(nameQuery) {
     dynastyDataLabAdp: dynastyDataLabValues.dynastyDataLabAdp,
     dynastyDataLabValue: dynastyDataLabValues.dynastyDataLabValue,
     seasonTotals2025: resolveSeasonTotals2025(basePlayer.playerName)
-  };
+  });
 }
 
 module.exports = { findPlayerByName };

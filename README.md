@@ -71,6 +71,17 @@ If one AI coding/review agent is unavailable:
   - `Dynasty Data Lab ADP` and `Dynasty Data Lab value` (served from a checked-in local artifact snapshot prepared from Dynasty Data Lab public dynasty startup ADP/value table, Superflex format, snapshot date 2026-04-08 UTC).
 - **Still mocked in this phase:** none on the current MVP player card fields.
 
+## Artifact refresh instructions
+Detailed, step-by-step refresh guidance for every checked-in source artifact now lives in:
+
+- `docs/ARTIFACT_REFRESH.md`
+
+That guide documents for each artifact:
+- upstream source
+- snapshot meaning/format
+- how the current local file was derived
+- practical refresh steps for normal users
+
 ## Local development
 1. Install dependencies:
    ```bash
