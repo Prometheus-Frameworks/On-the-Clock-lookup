@@ -9,6 +9,15 @@ function formatValue(value) {
   return value;
 }
 
+function renderSourceSummary(sourceLabels) {
+  return [
+    `2025 PPR finish: ${formatValue(sourceLabels.pprFinish)}`,
+    `KTC rank/value: ${formatValue(sourceLabels.ktc)}`,
+    `Dynasty Data Lab ADP/value: ${formatValue(sourceLabels.dynastyDataLab)}`,
+    `2025 season totals: ${formatValue(sourceLabels.seasonTotals)}`
+  ].join(' • ');
+}
+
 function renderPlayerCard(player) {
   return `
     <article class="player-card">
@@ -17,17 +26,14 @@ function renderPlayerCard(player) {
         <div><span class="label">Position</span><span class="value">${formatValue(player.position)}</span></div>
         <div><span class="label">Team</span><span class="value">${formatValue(player.team)}</span></div>
         <div><span class="label">2025 PPR finish</span><span class="value">${formatValue(player.pprFinish2025)}</span></div>
-        <div><span class="label">2025 PPR source</span><span class="value">${formatValue(player.sourceLabels.pprFinish)}</span></div>
         <div><span class="label">KTC rank</span><span class="value">${formatValue(player.ktcRank)}</span></div>
         <div><span class="label">KTC value</span><span class="value">${formatValue(player.ktcValue)}</span></div>
-        <div><span class="label">KTC source</span><span class="value">${formatValue(player.sourceLabels.ktc)}</span></div>
         <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(player.dynastyDataLabAdp)}</span></div>
         <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(player.dynastyDataLabValue)}</span></div>
-        <div><span class="label">Dynasty Data Lab source</span><span class="value">${formatValue(player.sourceLabels.dynastyDataLab)}</span></div>
         <div><span class="label">2025 season totals</span><span class="value">${formatValue(player.seasonTotals2025)}</span></div>
       </div>
       <p class="note">
-        Sources: ${formatValue(player.sourceLabels.ktc)}, ${formatValue(player.sourceLabels.dynastyDataLab)}, ${formatValue(player.sourceLabels.pprFinish)}, ${formatValue(player.sourceLabels.seasonTotals)}.
+        Sources: ${renderSourceSummary(player.sourceLabels)}.
       </p>
     </article>
   `;
