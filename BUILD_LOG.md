@@ -173,3 +173,15 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Removed Jayden Daniels and C.J. Stroud from the receiving-style season totals artifact so lookup returns `null` for this field and UI renders `unavailable` for those QBs under the current card shape.
 - **Notes/issues:** Kept scope narrow; no response contract or UI structure changes.
+
+
+### 2026-04-08 — Dynasty Data Lab artifact aligned to full 9-player local pool
+- **Date:** 2026-04-08
+- **Goal:** Expand Dynasty Data Lab artifact coverage alignment for the existing nine-player local pool while preserving MVP response behavior.
+- **Prompt used:** “Build the next PR for this project by improving Dynasty Data Lab coverage for the expanded 9-player local pool, while keeping the app simple and the current MVP card unchanged.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/dynastyDataLab.adpValue.json`
+  - `BUILD_LOG.md`
+- **Result:** Updated the checked-in Dynasty Data Lab artifact to include explicit rows for all nine local pool players while preserving existing source-backed ADP/value values and null handling for unavailable fields.
+- **Notes/issues:** Dynasty Data Lab domain access remains blocked from this execution environment (HTTP 403), so additional ADP/value numbers beyond the previously captured rows could not be freshly retrieved in this pass.
