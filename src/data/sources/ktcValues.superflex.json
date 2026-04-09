@@ -69,6 +69,31 @@
       "playerName": "Baker Mayfield",
       "ktcRank": 75,
       "ktcValue": 4751
+    },
+    {
+      "playerName": "DK Metcalf",
+      "ktcRank": 112,
+      "ktcValue": 3615
+    },
+    {
+      "playerName": "Rome Odunze",
+      "ktcRank": 46,
+      "ktcValue": 5586
+    },
+    {
+      "playerName": "Brian Thomas Jr.",
+      "ktcRank": 65,
+      "ktcValue": 4915
+    },
+    {
+      "playerName": "Pat Freiermuth",
+      "ktcRank": 245,
+      "ktcValue": 2213
+    },
+    {
+      "playerName": "D'Andre Swift",
+      "ktcRank": 115,
+      "ktcValue": 3561
     }
   ]
 }
