@@ -269,3 +269,16 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Expanded the local player pool from 23 to 35 with additional mid-tier and edge-case names across QB/RB/WR/TE, and added a compact script that iterates the pool, runs existing lookup flow, and reports found status plus six-field coverage/missing fields with aggregate totals and position breakdowns.
 - **Notes/issues:** Intentionally did not backfill missing artifacts or alter UI/lookup behavior; this pass is for stress visibility, not weakness remediation.
+
+### 2026-04-09 — Targeted artifact backfill for weak partial-coverage players
+- **Date:** 2026-04-09
+- **Goal:** Use the stress-test report to improve a small, high-value subset of weak partial-coverage players in the 35-player local pool without changing app behavior.
+- **Prompt used:** “Build the next PR for this project by using the stress-test results to improve coverage for a small, targeted set of the weakest partial-coverage players in the current 35-player pool.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/pprFinish2025.nflverse.json`
+  - `src/data/sources/seasonTotals2025.nflverse.json`
+  - `src/data/sources/ktcValues.superflex.json`
+  - `BUILD_LOG.md`
+- **Result:** Backfilled source-backed rows for four previously 0/6 players (Amon-Ra St. Brown, Jaxon Smith-Njigba, Dalton Kincaid, Baker Mayfield) using existing nflverse and KTC artifacts. Their coverage improved to 4/6 (WR/TE) and 3/6 (QB), while Dynasty Data Lab fields remain unavailable due source-access limits.
+- **Notes/issues:** Dynasty Data Lab remained inaccessible from this environment (HTTP 403), so ADP/value fields were intentionally left missing rather than inferred.

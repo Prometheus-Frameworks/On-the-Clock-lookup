@@ -2,7 +2,7 @@
   "source": {
     "name": "nflverse stats_player_reg_2025.csv",
     "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
-    "derivedAt": "2026-04-08",
+    "derivedAt": "2026-04-09",
     "derivation": "Position finish is rank within position by fantasy_points_ppr (descending)."
   },
   "players": [
@@ -59,6 +59,30 @@
       "position": "QB",
       "fantasyPointsPpr": 208.54,
       "pprFinish": 21
+    },
+    {
+      "playerName": "Amon-Ra St. Brown",
+      "position": "WR",
+      "fantasyPointsPpr": 324.0,
+      "pprFinish": 3
+    },
+    {
+      "playerName": "Jaxon Smith-Njigba",
+      "position": "WR",
+      "fantasyPointsPpr": 359.9,
+      "pprFinish": 2
+    },
+    {
+      "playerName": "Dalton Kincaid",
+      "position": "TE",
+      "fantasyPointsPpr": 126.1,
+      "pprFinish": 20
+    },
+    {
+      "playerName": "Baker Mayfield",
+      "position": "QB",
+      "fantasyPointsPpr": 271.92,
+      "pprFinish": 12
     }
   ]
 }
