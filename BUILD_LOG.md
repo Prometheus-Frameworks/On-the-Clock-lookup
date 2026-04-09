@@ -20,6 +20,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-09 — First MVP-card UI redesign (dark premium pass)
+- **Date:** 2026-04-09
+- **Goal:** Replace the plain MVP card with the first real dark-theme “MVP card” redesign using the existing frontend mapping layer, while preserving lookup behavior and truthful unavailable/source handling.
+- **Prompt used:** “Build the next PR for this project by implementing the first real MVP-card UI redesign using the new frontend data-mapping layer that already exists.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `public/styles.css`
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Implemented a premium dark-shell redesign with upgraded search UI (dark input + stronger button + styled loading), a restructured card header (name + position/team badges + coverage), separated market/performance sections, team-accent border, and preserved transparent sources/unavailable values via the existing view-model render flow.
+- **Notes/issues:** Intentionally deferred optional extras (sparklines, search history, broad component-system expansion, full responsive polish) to keep this pass readable and scoped.
+
 ### 2026-04-09 — Frontend data-shaping prep pass for future MVP-card redesign
 - **Date:** 2026-04-09
 - **Goal:** Add a small frontend mapping layer that reshapes the API player payload into a cleaner UI view model while keeping current card behavior and visuals unchanged.

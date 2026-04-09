@@ -30,6 +30,7 @@ The card shows these exact fields:
 
 Internal frontend note:
 - The browser now maps the API `player` payload into a small UI-facing view model (`identity`, `marketMetrics`, `performance`, `sources`) before rendering, so future card redesign work can stay mostly presentational.
+- The current MVP card presentation now uses a dark-theme layout with a stronger visual hierarchy: a player identity header with position/team badges, separated market/performance sections, and a de-emphasized but visible source transparency footer.
 
 ## MVP: what it explicitly does NOT do
 This MVP is intentionally limited. It does **not** include:
