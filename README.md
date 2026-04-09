@@ -28,6 +28,9 @@ The card shows these exact fields:
   - wording and formatting stay intentionally simple so position-specific layouts can expand later
 - A compact coverage line based on those six data fields (for example: “Coverage: 5 of 6 fields available”), so users can quickly tell whether a card is mostly complete or partial
 
+Internal frontend note:
+- The browser now maps the API `player` payload into a small UI-facing view model (`identity`, `marketMetrics`, `performance`, `sources`) before rendering, so future card redesign work can stay mostly presentational.
+
 ## MVP: what it explicitly does NOT do
 This MVP is intentionally limited. It does **not** include:
 - a custom grading engine

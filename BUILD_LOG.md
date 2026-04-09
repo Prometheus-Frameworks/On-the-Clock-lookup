@@ -20,6 +20,20 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-09 — Frontend data-shaping prep pass for future MVP-card redesign
+- **Date:** 2026-04-09
+- **Goal:** Add a small frontend mapping layer that reshapes the API player payload into a cleaner UI view model while keeping current card behavior and visuals unchanged.
+- **Prompt used:** “Build the next PR for this project as a frontend data-shaping prep pass for a future MVP-card UI redesign.” (full prompt in chat task context).
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `public/playerViewModel.js`
+  - `public/app.js`
+  - `public/index.html`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a dedicated frontend helper that maps raw player API fields into grouped UI-facing blocks (`identity`, `marketMetrics`, `performance`, `sources`) and switched card rendering to consume the mapped object without changing the existing UI layout or unavailable/source transparency behavior.
+- **Notes/issues:** Kept backend API contract unchanged; this pass prepares cleaner rendering inputs for a future MVP-card visual redesign PR.
+
 ### 2026-04-09 — Position-aware season totals presentation for expanded stress-test pool
 - **Date:** 2026-04-09
 - **Goal:** Make the season totals row read more honestly across positions without changing the MVP card structure or search flow.
