@@ -1,12 +1,60 @@
 const form = document.getElementById('player-search-form');
 const input = document.getElementById('player-name');
 const result = document.getElementById('result');
+const searchButton = form.querySelector('button[type="submit"]');
+
+const TEAM_ACCENT_COLORS = {
+  ATL: '#d32f2f',
+  NYJ: '#16a34a',
+  LV: '#a1a1aa',
+  SF: '#ef4444',
+  DAL: '#60a5fa',
+  WAS: '#f59e0b',
+  TB: '#f87171',
+  CHI: '#fb923c',
+  DET: '#3b82f6',
+  SEA: '#84cc16',
+  JAX: '#06b6d4',
+  BUF: '#2563eb'
+};
 
 function formatValue(value) {
   if (value === null || value === undefined || value === '') {
     return 'unavailable';
   }
   return value;
+}
+
+function getTeamAccent(team) {
+  if (!team) {
+    return '#64748b';
+  }
+
+  const normalized = String(team).toUpperCase().trim();
+  return TEAM_ACCENT_COLORS[normalized] || '#64748b';
+}
+
+function getPositionBadgeClass(position) {
+  const normalized = String(position || '').toUpperCase().trim();
+
+  if (normalized === 'QB') return 'badge-qb';
+  if (normalized === 'RB') return 'badge-rb';
+  if (normalized === 'WR') return 'badge-wr';
+  if (normalized === 'TE') return 'badge-te';
+
+  return 'badge-default';
+}
+
+function renderMetric(label, value) {
+  const display = formatValue(value);
+  const isUnavailable = display === 'unavailable' || display.startsWith('unavailable');
+
+  return `
+    <div class="metric">
+      <span class="label">${label}</span>
+      <span class="value ${isUnavailable ? 'value-unavailable' : ''}">${display}</span>
+    </div>
+  `;
 }
 
 function renderSourceSummary(sourceItems) {
@@ -17,8 +65,8 @@ function renderSourceSummary(sourceItems) {
     .join('');
 
   return `
-    <div class="source-summary">
-      <p class="source-title">Sources</p>
+    <div class="source-summary sources">
+      <p class="source-title">Source transparency</p>
       <ul>
         ${sourceRows}
       </ul>
@@ -28,24 +76,45 @@ function renderSourceSummary(sourceItems) {
 
 function renderPlayerCard(player) {
   const playerView = window.mapPlayerToCardViewModel(player);
+  const positionValue = formatValue(playerView.identity.position);
+  const teamValue = formatValue(playerView.identity.team);
+  const positionClass = getPositionBadgeClass(playerView.identity.position);
+  const teamAccent = getTeamAccent(playerView.identity.team);
 
   return `
-    <article class="player-card">
-      <h2>${playerView.identity.name}</h2>
-      <p class="coverage">${playerView.performance.coverage.text}</p>
-      <div class="grid">
-        <div><span class="label">Position</span><span class="value">${formatValue(playerView.identity.position)}</span></div>
-        <div><span class="label">Team</span><span class="value">${formatValue(playerView.identity.team)}</span></div>
-        <div><span class="label">2025 PPR finish</span><span class="value">${formatValue(playerView.performance.pprFinish2025)}</span></div>
-        <div><span class="label">KTC rank</span><span class="value">${formatValue(playerView.marketMetrics.ktcRank)}</span></div>
-        <div><span class="label">KTC value</span><span class="value">${formatValue(playerView.marketMetrics.ktcValue)}</span></div>
-        <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(playerView.marketMetrics.dynastyDataLabAdp)}</span></div>
-        <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(playerView.marketMetrics.dynastyDataLabValue)}</span></div>
-        <div><span class="label">${playerView.performance.seasonTotals.label}</span><span class="value">${formatValue(playerView.performance.seasonTotals.value)}</span></div>
-      </div>
-      <section class="note">
-        ${renderSourceSummary(playerView.sources.items)}
+    <article class="player-card" style="--team-accent:${teamAccent}">
+      <header class="player-header">
+        <div>
+          <h2 class="player-title">${playerView.identity.name}</h2>
+          <div class="badge-row">
+            <span class="badge ${positionClass}">${positionValue}</span>
+            <span class="badge badge-team">${teamValue}</span>
+          </div>
+        </div>
+        <p class="coverage">${playerView.performance.coverage.text}</p>
+      </header>
+
+      <section class="section">
+        <h3 class="section-title">Market metrics</h3>
+        <div class="metric-grid">
+          ${renderMetric('KTC rank', playerView.marketMetrics.ktcRank)}
+          ${renderMetric('KTC value', playerView.marketMetrics.ktcValue)}
+          ${renderMetric('Dynasty Data Lab ADP', playerView.marketMetrics.dynastyDataLabAdp)}
+          ${renderMetric('Dynasty Data Lab value', playerView.marketMetrics.dynastyDataLabValue)}
+        </div>
       </section>
+
+      <section class="section">
+        <h3 class="section-title">Performance</h3>
+        <div class="performance-highlight">
+          ${renderMetric('2025 PPR finish', playerView.performance.pprFinish2025)}
+        </div>
+        <div class="metric-grid">
+          ${renderMetric(playerView.performance.seasonTotals.label, playerView.performance.seasonTotals.value)}
+        </div>
+      </section>
+
+      ${renderSourceSummary(playerView.sources.items)}
     </article>
   `;
 }
@@ -94,14 +163,16 @@ form.addEventListener('submit', async (event) => {
     return;
   }
 
-  result.innerHTML = '<p>Searching…</p>';
+  searchButton.disabled = true;
+  searchButton.textContent = 'Searching…';
+  result.innerHTML = '<article class="search-loading">Searching player data…</article>';
 
   try {
     const response = await fetch(`/api/players?name=${encodeURIComponent(query)}`);
     const payload = await response.json();
 
     if (!response.ok) {
-      result.innerHTML = `<p class="error">${payload.error || 'Something went wrong.'}</p>`;
+      result.innerHTML = `<article class="search-feedback"><p class="error">${payload.error || 'Something went wrong.'}</p></article>`;
       return;
     }
 
@@ -112,6 +183,9 @@ form.addEventListener('submit', async (event) => {
 
     result.innerHTML = renderPlayerCard(payload.player);
   } catch (error) {
-    result.innerHTML = '<p class="error">Request failed. Please try again.</p>';
+    result.innerHTML = '<article class="search-feedback"><p class="error">Request failed. Please try again.</p></article>';
+  } finally {
+    searchButton.disabled = false;
+    searchButton.textContent = 'Search';
   }
 });
