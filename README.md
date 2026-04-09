@@ -22,8 +22,10 @@ The card shows these exact fields:
 - Dynasty Data Lab ADP
 - Dynasty Data Lab value (if available)
 - 2025 season totals in a simple format
-  - WR/TE format in MVP: receptions / yards / touchdowns
-  - wording and formatting should stay flexible so position-specific layouts can expand later
+  - position-aware presentation in MVP:
+    - WR/RB/TE cards show receiving totals as: receptions / yards / touchdowns
+    - positions that are not cleanly represented by the current receiving-style artifact show an explicit unavailable fallback instead of forcing a misleading stat line
+  - wording and formatting stay intentionally simple so position-specific layouts can expand later
 - A compact coverage line based on those six data fields (for example: “Coverage: 5 of 6 fields available”), so users can quickly tell whether a card is mostly complete or partial
 
 ## MVP: what it explicitly does NOT do

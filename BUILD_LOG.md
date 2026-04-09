@@ -20,6 +20,18 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-09 — Position-aware season totals presentation for expanded stress-test pool
+- **Date:** 2026-04-09
+- **Goal:** Make the season totals row read more honestly across positions without changing the MVP card structure or search flow.
+- **Prompt used:** “Build the next PR for this project by improving how the season totals field is presented across positions, based on the stress-test results from the expanded player pool.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `public/app.js`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Added a small position-aware presentation helper for the season totals row: WR/RB/TE display a receiving-totals label, while unsupported positions now show an explicit unavailable fallback noting the current receiving-style artifact limitation.
+- **Notes/issues:** Kept the card compact and preserved lookup behavior, coverage line logic, source summary, and general unavailable handling for other fields.
+
 ### 2026-04-08 — Not-found/search-result UX improvements with simple local suggestions
 - **Date:** 2026-04-08
 - **Goal:** Improve the not-found and weak-query search-result experience while keeping the existing MVP player card unchanged.
