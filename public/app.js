@@ -10,12 +10,17 @@ function formatValue(value) {
 }
 
 function renderSourceSummary(sourceLabels) {
-  return [
-    `2025 PPR finish: ${formatValue(sourceLabels.pprFinish)}`,
-    `KTC rank/value: ${formatValue(sourceLabels.ktc)}`,
-    `Dynasty Data Lab ADP/value: ${formatValue(sourceLabels.dynastyDataLab)}`,
-    `2025 season totals: ${formatValue(sourceLabels.seasonTotals)}`
-  ].join(' • ');
+  return `
+    <div class="source-summary">
+      <p class="source-title">Sources</p>
+      <ul>
+        <li><span class="source-field">2025 PPR finish</span><span class="source-detail">${formatValue(sourceLabels.pprFinish)}</span></li>
+        <li><span class="source-field">KTC rank/value</span><span class="source-detail">${formatValue(sourceLabels.ktc)}</span></li>
+        <li><span class="source-field">Dynasty Data Lab ADP/value</span><span class="source-detail">${formatValue(sourceLabels.dynastyDataLab)}</span></li>
+        <li><span class="source-field">2025 season totals</span><span class="source-detail">${formatValue(sourceLabels.seasonTotals)}</span></li>
+      </ul>
+    </div>
+  `;
 }
 
 function isFieldAvailable(value) {
@@ -60,9 +65,9 @@ function renderPlayerCard(player) {
         <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(player.dynastyDataLabValue)}</span></div>
         <div><span class="label">2025 season totals</span><span class="value">${formatValue(player.seasonTotals2025)}</span></div>
       </div>
-      <p class="note">
-        Sources: ${renderSourceSummary(player.sourceLabels)}.
-      </p>
+      <section class="note">
+        ${renderSourceSummary(player.sourceLabels)}
+      </section>
     </article>
   `;
 }
