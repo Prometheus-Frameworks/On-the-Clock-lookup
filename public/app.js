@@ -9,90 +9,42 @@ function formatValue(value) {
   return value;
 }
 
-function renderSourceSummary(sourceLabels) {
+function renderSourceSummary(sourceItems) {
+  const sourceRows = sourceItems
+    .map((item) => {
+      return `<li><span class="source-field">${item.fieldLabel}</span><span class="source-detail">${formatValue(item.sourceLabel)}</span></li>`;
+    })
+    .join('');
+
   return `
     <div class="source-summary">
       <p class="source-title">Sources</p>
       <ul>
-        <li><span class="source-field">2025 PPR finish</span><span class="source-detail">${formatValue(sourceLabels.pprFinish)}</span></li>
-        <li><span class="source-field">KTC rank/value</span><span class="source-detail">${formatValue(sourceLabels.ktc)}</span></li>
-        <li><span class="source-field">Dynasty Data Lab ADP/value</span><span class="source-detail">${formatValue(sourceLabels.dynastyDataLab)}</span></li>
-        <li><span class="source-field">2025 season totals</span><span class="source-detail">${formatValue(sourceLabels.seasonTotals)}</span></li>
+        ${sourceRows}
       </ul>
     </div>
   `;
 }
 
-function getSeasonTotalsPresentation(player) {
-  const position = typeof player.position === 'string' ? player.position.trim().toUpperCase() : '';
-  const supportsReceivingTotals = ['WR', 'TE', 'RB'].includes(position);
-
-  if (supportsReceivingTotals) {
-    return {
-      label: '2025 receiving totals',
-      value: player.seasonTotals2025
-    };
-  }
-
-  if (isFieldAvailable(player.seasonTotals2025)) {
-    return {
-      label: '2025 season totals',
-      value: player.seasonTotals2025
-    };
-  }
-
-  return {
-    label: '2025 season totals',
-    value: 'unavailable (current artifact is receiving-style for this position)'
-  };
-}
-
-function isFieldAvailable(value) {
-  return !(value === null || value === undefined || value === '');
-}
-
-function getCoverageSummary(player) {
-  const coverageFields = [
-    player.pprFinish2025,
-    player.ktcRank,
-    player.ktcValue,
-    player.dynastyDataLabAdp,
-    player.dynastyDataLabValue,
-    player.seasonTotals2025
-  ];
-
-  const availableCount = coverageFields.filter((value) => isFieldAvailable(value)).length;
-  const totalCount = coverageFields.length;
-
-  let statusText = 'partial coverage';
-  if (availableCount === totalCount) {
-    statusText = 'full coverage';
-  } else if (availableCount >= totalCount - 1) {
-    statusText = 'broad coverage';
-  }
-
-  return `Coverage: ${availableCount} of ${totalCount} fields available (${statusText}).`;
-}
-
 function renderPlayerCard(player) {
-  const seasonTotals = getSeasonTotalsPresentation(player);
+  const playerView = window.mapPlayerToCardViewModel(player);
 
   return `
     <article class="player-card">
-      <h2>${player.playerName}</h2>
-      <p class="coverage">${getCoverageSummary(player)}</p>
+      <h2>${playerView.identity.name}</h2>
+      <p class="coverage">${playerView.performance.coverage.text}</p>
       <div class="grid">
-        <div><span class="label">Position</span><span class="value">${formatValue(player.position)}</span></div>
-        <div><span class="label">Team</span><span class="value">${formatValue(player.team)}</span></div>
-        <div><span class="label">2025 PPR finish</span><span class="value">${formatValue(player.pprFinish2025)}</span></div>
-        <div><span class="label">KTC rank</span><span class="value">${formatValue(player.ktcRank)}</span></div>
-        <div><span class="label">KTC value</span><span class="value">${formatValue(player.ktcValue)}</span></div>
-        <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(player.dynastyDataLabAdp)}</span></div>
-        <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(player.dynastyDataLabValue)}</span></div>
-        <div><span class="label">${seasonTotals.label}</span><span class="value">${formatValue(seasonTotals.value)}</span></div>
+        <div><span class="label">Position</span><span class="value">${formatValue(playerView.identity.position)}</span></div>
+        <div><span class="label">Team</span><span class="value">${formatValue(playerView.identity.team)}</span></div>
+        <div><span class="label">2025 PPR finish</span><span class="value">${formatValue(playerView.performance.pprFinish2025)}</span></div>
+        <div><span class="label">KTC rank</span><span class="value">${formatValue(playerView.marketMetrics.ktcRank)}</span></div>
+        <div><span class="label">KTC value</span><span class="value">${formatValue(playerView.marketMetrics.ktcValue)}</span></div>
+        <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(playerView.marketMetrics.dynastyDataLabAdp)}</span></div>
+        <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(playerView.marketMetrics.dynastyDataLabValue)}</span></div>
+        <div><span class="label">${playerView.performance.seasonTotals.label}</span><span class="value">${formatValue(playerView.performance.seasonTotals.value)}</span></div>
       </div>
       <section class="note">
-        ${renderSourceSummary(player.sourceLabels)}
+        ${renderSourceSummary(playerView.sources.items)}
       </section>
     </article>
   `;
