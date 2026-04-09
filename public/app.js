@@ -45,12 +45,25 @@ function getPositionBadgeClass(position) {
   return 'badge-default';
 }
 
-function renderMetric(label, value) {
+function getCoverageTone(statusText) {
+  if (statusText === 'full coverage') {
+    return 'coverage-good';
+  }
+
+  if (statusText === 'broad coverage') {
+    return 'coverage-broad';
+  }
+
+  return 'coverage-partial';
+}
+
+function renderMetric(label, value, options = {}) {
+  const { featured = false } = options;
   const display = formatValue(value);
   const isUnavailable = display === 'unavailable' || display.startsWith('unavailable');
 
   return `
-    <div class="metric">
+    <div class="metric ${featured ? 'metric-featured' : ''}">
       <span class="label">${label}</span>
       <span class="value ${isUnavailable ? 'value-unavailable' : ''}">${display}</span>
     </div>
@@ -65,12 +78,15 @@ function renderSourceSummary(sourceItems) {
     .join('');
 
   return `
-    <div class="source-summary sources">
-      <p class="source-title">Source transparency</p>
-      <ul>
-        ${sourceRows}
-      </ul>
-    </div>
+    <section class="section section-sources">
+      <h3 class="section-title">Sources & context</h3>
+      <p class="section-subtle">Public-source labels shown for inspectability. Unavailable fields are kept explicit.</p>
+      <div class="source-summary">
+        <ul>
+          ${sourceRows}
+        </ul>
+      </div>
+    </section>
   `;
 }
 
@@ -81,33 +97,46 @@ function renderPlayerCard(player) {
   const positionClass = getPositionBadgeClass(playerView.identity.position);
   const teamAccent = getTeamAccent(playerView.identity.team);
 
+  const coverage = playerView.performance.coverage;
+  const coveragePercent = Math.round((coverage.availableCount / coverage.totalCount) * 100);
+  const coverageClass = getCoverageTone(coverage.statusText);
+
   return `
     <article class="player-card" style="--team-accent:${teamAccent}">
       <header class="player-header">
         <div>
+          <p class="player-kicker">MVP Lookup Card</p>
           <h2 class="player-title">${playerView.identity.name}</h2>
           <div class="badge-row">
             <span class="badge ${positionClass}">${positionValue}</span>
             <span class="badge badge-team">${teamValue}</span>
           </div>
         </div>
-        <p class="coverage">${playerView.performance.coverage.text}</p>
+        <div class="coverage-panel ${coverageClass}">
+          <p class="coverage-heading">Coverage</p>
+          <p class="coverage-count">${coverage.availableCount}/${coverage.totalCount}</p>
+          <div class="coverage-track" role="presentation">
+            <span class="coverage-fill" style="width:${coveragePercent}%"></span>
+          </div>
+          <p class="coverage-copy">${coverage.statusText}</p>
+        </div>
       </header>
 
-      <section class="section">
+      <section class="section section-market">
         <h3 class="section-title">Market metrics</h3>
         <div class="metric-grid">
-          ${renderMetric('KTC rank', playerView.marketMetrics.ktcRank)}
-          ${renderMetric('KTC value', playerView.marketMetrics.ktcValue)}
+          ${renderMetric('KTC rank', playerView.marketMetrics.ktcRank, { featured: true })}
+          ${renderMetric('KTC value', playerView.marketMetrics.ktcValue, { featured: true })}
           ${renderMetric('Dynasty Data Lab ADP', playerView.marketMetrics.dynastyDataLabAdp)}
           ${renderMetric('Dynasty Data Lab value', playerView.marketMetrics.dynastyDataLabValue)}
         </div>
       </section>
 
-      <section class="section">
-        <h3 class="section-title">Performance</h3>
+      <section class="section section-performance">
+        <h3 class="section-title">Performance snapshot</h3>
+        <p class="section-subtle">Latest season context shown as-is from checked-in artifacts.</p>
         <div class="performance-highlight">
-          ${renderMetric('2025 PPR finish', playerView.performance.pprFinish2025)}
+          ${renderMetric('2025 PPR finish', playerView.performance.pprFinish2025, { featured: true })}
         </div>
         <div class="metric-grid">
           ${renderMetric(playerView.performance.seasonTotals.label, playerView.performance.seasonTotals.value)}
