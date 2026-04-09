@@ -243,3 +243,17 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** KTC artifact path and source labels now default to Superflex, KTC snapshot metadata/docs now reference `ktc_sf.csv`, and the player-card source area now renders as a compact field-by-field source list instead of one dense sentence.
 - **Notes/issues:** Superflex values were refreshed from the public `flamjammy/dynastykit-ktc-scraper` `docs/ktc_sf.csv` snapshot in this environment (updated April 08, 2026 07:24 PM UTC in upstream header).
+
+### 2026-04-09 — Stress-test local pool expansion + coverage diagnostic script
+- **Date:** 2026-04-09
+- **Goal:** Expand the local pool in a controlled way and add a simple diagnostic report to inspect lookup + six-field coverage gaps without changing product behavior.
+- **Prompt used:** “Build a small stress-test PR for this project so we can evaluate how the current app behaves with a broader and slightly messier player pool, without changing the core product.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/mockPlayers.js`
+  - `scripts/stressTestCoverageReport.js`
+  - `package.json`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** Expanded the local player pool from 23 to 35 with additional mid-tier and edge-case names across QB/RB/WR/TE, and added a compact script that iterates the pool, runs existing lookup flow, and reports found status plus six-field coverage/missing fields with aggregate totals and position breakdowns.
+- **Notes/issues:** Intentionally did not backfill missing artifacts or alter UI/lookup behavior; this pass is for stress visibility, not weakness remediation.

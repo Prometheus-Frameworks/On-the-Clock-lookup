@@ -112,6 +112,71 @@ const MOCK_PLAYERS = [
     playerName: 'Pat Freiermuth',
     position: 'TE',
     team: 'PIT'
+  },
+  {
+    playerName: 'Trevor Lawrence',
+    position: 'QB',
+    team: 'JAX'
+  },
+  {
+    playerName: 'Derek Carr',
+    position: 'QB',
+    team: 'NO'
+  },
+  {
+    playerName: 'Russell Wilson',
+    position: 'QB',
+    team: 'PIT'
+  },
+  {
+    playerName: 'Zamir White',
+    position: 'RB',
+    team: 'LV'
+  },
+  {
+    playerName: 'Jerome Ford',
+    position: 'RB',
+    team: 'CLE'
+  },
+  {
+    playerName: 'Ty Chandler',
+    position: 'RB',
+    team: 'MIN'
+  },
+  {
+    playerName: 'Roschon Johnson',
+    position: 'RB',
+    team: 'CHI'
+  },
+  {
+    playerName: 'Jakobi Meyers',
+    position: 'WR',
+    team: 'LV'
+  },
+  {
+    playerName: 'Khalil Shakir',
+    position: 'WR',
+    team: 'BUF'
+  },
+  {
+    playerName: 'Marvin Mims Jr.',
+    position: 'WR',
+    team: 'DEN'
+  },
+  {
+    playerName: "Wan'Dale Robinson",
+    position: 'WR',
+    team: 'NYG'
+  },
+  {
+    playerName: 'Tucker Kraft',
+    position: 'TE',
+    team: 'GB'
+  },
+  {
+    playerName: 'Juwan Johnson',
+    position: 'TE',
+    team: 'NO'
   }
 ];
 

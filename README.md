@@ -108,7 +108,23 @@ That guide documents for each artifact:
    - Brian Thomas Jr.
    - Dalton Kincaid
 
-Note: the local player pool is now intentionally broader (23 players) than current checked-in artifact coverage, so some players will return partial cards with `unavailable` values. This is expected for stress-testing search behavior, source coverage transparency, and edge-case name handling.
+Note: the local player pool is now intentionally broader (35 players) than current checked-in artifact coverage, so some players will return partial cards with `unavailable` values. This is expected for stress-testing search behavior, source coverage transparency, and edge-case name handling.
+
+## Stress-test coverage report
+Run the diagnostic script to inspect lookup and field coverage across the current local pool:
+
+```bash
+npm run stress:coverage
+```
+
+The script prints one compact line per local player with:
+- player name
+- position
+- whether lookup found a result
+- coverage count across the six MVP data fields
+- missing field names
+
+It also prints a small aggregate summary (full/broad/partial coverage counts and a position-grouped breakdown).
 
 ## Public build log process
 Future build prompts and meaningful build steps are logged in `BUILD_LOG.md`.
