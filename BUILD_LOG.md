@@ -282,3 +282,16 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Backfilled source-backed rows for four previously 0/6 players (Amon-Ra St. Brown, Jaxon Smith-Njigba, Dalton Kincaid, Baker Mayfield) using existing nflverse and KTC artifacts. Their coverage improved to 4/6 (WR/TE) and 3/6 (QB), while Dynasty Data Lab fields remain unavailable due source-access limits.
 - **Notes/issues:** Dynasty Data Lab remained inaccessible from this environment (HTTP 403), so ADP/value fields were intentionally left missing rather than inferred.
+
+### 2026-04-09 — Second targeted artifact backfill batch for weak-coverage pool players
+- **Date:** 2026-04-09
+- **Goal:** Improve another small, high-value subset of weak-coverage players in the 35-player pool using existing artifacts, while preserving current UI and lookup behavior.
+- **Prompt used:** “Build the next PR for this project by doing another small, targeted artifact backfill batch for weak-coverage players in the current 35-player pool.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/pprFinish2025.nflverse.json`
+  - `src/data/sources/seasonTotals2025.nflverse.json`
+  - `src/data/sources/ktcValues.superflex.json`
+  - `BUILD_LOG.md`
+- **Result:** Backfilled five recognizable weak-coverage WR/RB/TE players (DK Metcalf, Rome Odunze, Brian Thomas Jr., Pat Freiermuth, D'Andre Swift) across nflverse PPR finish, nflverse season receiving totals, and KTC Superflex rank/value artifacts. Each moved from 0/6 to 4/6 coverage with only Dynasty Data Lab fields still unavailable.
+- **Notes/issues:** Dynasty Data Lab was not expanded in this pass; missing ADP/value fields remain null/unavailable by design.

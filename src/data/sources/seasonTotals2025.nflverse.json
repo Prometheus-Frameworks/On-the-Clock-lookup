@@ -64,6 +64,36 @@
       "receptions": 39,
       "receivingYards": 571,
       "receivingTds": 5
+    },
+    {
+      "playerName": "DK Metcalf",
+      "receptions": 59,
+      "receivingYards": 850,
+      "receivingTds": 6
+    },
+    {
+      "playerName": "Rome Odunze",
+      "receptions": 44,
+      "receivingYards": 661,
+      "receivingTds": 6
+    },
+    {
+      "playerName": "Brian Thomas Jr.",
+      "receptions": 48,
+      "receivingYards": 707,
+      "receivingTds": 2
+    },
+    {
+      "playerName": "Pat Freiermuth",
+      "receptions": 41,
+      "receivingYards": 486,
+      "receivingTds": 4
+    },
+    {
+      "playerName": "D'Andre Swift",
+      "receptions": 34,
+      "receivingYards": 299,
+      "receivingTds": 1
     }
   ]
 }

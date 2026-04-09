@@ -83,6 +83,36 @@
       "position": "QB",
       "fantasyPointsPpr": 271.92,
       "pprFinish": 12
+    },
+    {
+      "playerName": "DK Metcalf",
+      "position": "WR",
+      "fantasyPointsPpr": 187.2,
+      "pprFinish": 26
+    },
+    {
+      "playerName": "Rome Odunze",
+      "position": "WR",
+      "fantasyPointsPpr": 146.1,
+      "pprFinish": 41
+    },
+    {
+      "playerName": "Brian Thomas Jr.",
+      "position": "WR",
+      "fantasyPointsPpr": 138.8,
+      "pprFinish": 42
+    },
+    {
+      "playerName": "Pat Freiermuth",
+      "position": "TE",
+      "fantasyPointsPpr": 113.6,
+      "pprFinish": 25
+    },
+    {
+      "playerName": "D'Andre Swift",
+      "position": "RB",
+      "fantasyPointsPpr": 228.6,
+      "pprFinish": 15
     }
   ]
 }
