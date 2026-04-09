@@ -23,6 +23,30 @@ function renderSourceSummary(sourceLabels) {
   `;
 }
 
+function getSeasonTotalsPresentation(player) {
+  const position = typeof player.position === 'string' ? player.position.trim().toUpperCase() : '';
+  const supportsReceivingTotals = ['WR', 'TE', 'RB'].includes(position);
+
+  if (supportsReceivingTotals) {
+    return {
+      label: '2025 receiving totals',
+      value: player.seasonTotals2025
+    };
+  }
+
+  if (isFieldAvailable(player.seasonTotals2025)) {
+    return {
+      label: '2025 season totals',
+      value: player.seasonTotals2025
+    };
+  }
+
+  return {
+    label: '2025 season totals',
+    value: 'unavailable (current artifact is receiving-style for this position)'
+  };
+}
+
 function isFieldAvailable(value) {
   return !(value === null || value === undefined || value === '');
 }
@@ -51,6 +75,8 @@ function getCoverageSummary(player) {
 }
 
 function renderPlayerCard(player) {
+  const seasonTotals = getSeasonTotalsPresentation(player);
+
   return `
     <article class="player-card">
       <h2>${player.playerName}</h2>
@@ -63,7 +89,7 @@ function renderPlayerCard(player) {
         <div><span class="label">KTC value</span><span class="value">${formatValue(player.ktcValue)}</span></div>
         <div><span class="label">Dynasty Data Lab ADP</span><span class="value">${formatValue(player.dynastyDataLabAdp)}</span></div>
         <div><span class="label">Dynasty Data Lab value</span><span class="value">${formatValue(player.dynastyDataLabValue)}</span></div>
-        <div><span class="label">2025 season totals</span><span class="value">${formatValue(player.seasonTotals2025)}</span></div>
+        <div><span class="label">${seasonTotals.label}</span><span class="value">${formatValue(seasonTotals.value)}</span></div>
       </div>
       <section class="note">
         ${renderSourceSummary(player.sourceLabels)}
