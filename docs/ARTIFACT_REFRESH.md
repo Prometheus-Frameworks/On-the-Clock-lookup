@@ -73,11 +73,11 @@ Use this guide when refreshing the artifacts.
 
 ## 3) KTC rank/value artifact
 
-- **Artifact file:** `src/data/sources/ktcValues.1qb.json`
+- **Artifact file:** `src/data/sources/ktcValues.superflex.json`
 - **Used by:** `src/data/ktcValues.js`
 - **Card field(s):** `ktcRank`, `ktcValue`
-- **Upstream source:** KeepTradeCut public 1QB dynasty ranking data via `flamjammy/dynastykit-ktc-scraper` snapshot path (`docs/ktc_1qb.csv`)
-- **Snapshot/format represented:** Point-in-time 1QB KTC rank/value snapshot.
+- **Upstream source:** KeepTradeCut public Superflex dynasty ranking data via `flamjammy/dynastykit-ktc-scraper` snapshot path (`docs/ktc_sf.csv`)
+- **Snapshot/format represented:** Point-in-time Superflex KTC rank/value snapshot.
 - **Current local format:**
   - top-level `metadata`
   - `players` array entries with:
@@ -86,14 +86,14 @@ Use this guide when refreshing the artifacts.
     - `ktcValue`
 
 ### How this artifact was derived
-1. Pull a recent `docs/ktc_1qb.csv` snapshot from the scraper repo.
+1. Pull a recent `docs/ktc_sf.csv` snapshot from the scraper repo.
 2. Locate rows for current local pool players.
 3. Copy rank/value into local JSON structure.
 4. Set/update snapshot date in metadata.
 
 ### How to refresh later
-1. Get latest public `ktc_1qb.csv` snapshot.
-2. Re-copy MVP rows into `src/data/sources/ktcValues.1qb.json`.
+1. Get latest public `ktc_sf.csv` snapshot.
+2. Re-copy MVP rows into `src/data/sources/ktcValues.superflex.json`.
 3. Keep number fields as numbers (not strings).
 4. Update metadata snapshot date and brief source note.
 

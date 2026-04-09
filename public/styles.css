@@ -85,8 +85,41 @@ button {
 
 .note {
   margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #444;
+  font-size: 0.86rem;
+  color: #374151;
+}
+
+.source-summary {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 0.75rem;
+}
+
+.source-title {
+  margin: 0 0 0.45rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.source-summary ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.source-summary li {
+  display: grid;
+  grid-template-columns: minmax(0, 180px) minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.source-field {
+  color: #4b5563;
+}
+
+.source-detail {
+  color: #111827;
 }
 
 .error {

@@ -1,4 +1,4 @@
-const ktcValuesArtifact = require('./sources/ktcValues.1qb.json');
+const ktcValuesArtifact = require('./sources/ktcValues.superflex.json');
 
 function normalizePlayerName(name) {
   if (!name || typeof name !== 'string') {

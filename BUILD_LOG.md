@@ -225,3 +225,21 @@ Every meaningful build step should be recorded here so anyone can review what wa
   - `BUILD_LOG.md`
 - **Result:** Expanded the local pool from 9 to 23 players with a deliberately mixed set across QB/RB/WR/TE, including less-obvious fantasy names and punctuation/format edge cases (for example hyphenated and suffix-style names). Kept lookup/card/source/coverage/no-match UX behavior unchanged.
 - **Notes/issues:** No artifact expansion in this step by design; newly added players can legitimately render `unavailable` for source-backed fields where artifact rows do not exist yet.
+
+
+### 2026-04-08 — KTC default switched to Superflex + source footer readability cleanup
+- **Date:** 2026-04-08
+- **Goal:** Make Superflex the default KTC format and clean up source presentation in the player card without changing MVP behavior.
+- **Prompt used:** “Build the next PR for this project by making superflex the default KTC format and cleaning up the source presentation so the player card matches that default more clearly.”
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `src/data/sources/ktcValues.superflex.json`
+  - `src/data/ktcValues.js`
+  - `src/data/playerContract.js`
+  - `public/app.js`
+  - `public/styles.css`
+  - `docs/ARTIFACT_REFRESH.md`
+  - `README.md`
+  - `BUILD_LOG.md`
+- **Result:** KTC artifact path and source labels now default to Superflex, KTC snapshot metadata/docs now reference `ktc_sf.csv`, and the player-card source area now renders as a compact field-by-field source list instead of one dense sentence.
+- **Notes/issues:** Superflex values were refreshed from the public `flamjammy/dynastykit-ktc-scraper` `docs/ktc_sf.csv` snapshot in this environment (updated April 08, 2026 07:24 PM UTC in upstream header).

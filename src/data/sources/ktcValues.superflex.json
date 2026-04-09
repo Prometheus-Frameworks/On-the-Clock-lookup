@@ -1,0 +1,54 @@
+{
+  "source": "KeepTradeCut dynasty rankings (Superflex)",
+  "sourceType": "real, local artifact",
+  "artifactDerivedFrom": "flamjammy/dynastykit-ktc-scraper docs/ktc_sf.csv",
+  "artifactUpdatedAtUtc": "2026-04-08T19:24:00Z",
+  "notes": "Overall rank is the 1-indexed row order from the KTC Superflex rankings snapshot after removing the two metadata header rows.",
+  "players": [
+    {
+      "playerName": "Drake London",
+      "ktcRank": 21,
+      "ktcValue": 6908
+    },
+    {
+      "playerName": "Garrett Wilson",
+      "ktcRank": 38,
+      "ktcValue": 5780
+    },
+    {
+      "playerName": "Brock Bowers",
+      "ktcRank": 12,
+      "ktcValue": 7729
+    },
+    {
+      "playerName": "Bijan Robinson",
+      "ktcRank": 2,
+      "ktcValue": 9992
+    },
+    {
+      "playerName": "CeeDee Lamb",
+      "ktcRank": 19,
+      "ktcValue": 7378
+    },
+    {
+      "playerName": "Jahmyr Gibbs",
+      "ktcRank": 5,
+      "ktcValue": 9611
+    },
+    {
+      "playerName": "Puka Nacua",
+      "ktcRank": 7,
+      "ktcValue": 9049
+    },
+    {
+      "playerName": "Jayden Daniels",
+      "ktcRank": 10,
+      "ktcValue": 7753
+    },
+    {
+      "playerName": "C.J. Stroud",
+      "ktcRank": 69,
+      "ktcValue": 4826
+    }
+  ]
+}

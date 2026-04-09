@@ -70,7 +70,7 @@ If one AI coding/review agent is unavailable:
 ## Data source status (current)
 - **Real-source-backed now:**
   - `2025 PPR finish` and `2025 season totals` (served from checked-in local artifacts derived from nflverse `stats_player_reg_2025.csv`).
-  - `KTC rank` and `KTC value` (served from a checked-in local artifact derived from a KeepTradeCut 1QB snapshot from `flamjammy/dynastykit-ktc-scraper`, updated 2026-04-07 UTC).
+  - `KTC rank` and `KTC value` (served from a checked-in local artifact derived from a KeepTradeCut Superflex snapshot from `flamjammy/dynastykit-ktc-scraper`, updated 2026-04-08 UTC).
   - `Dynasty Data Lab ADP` and `Dynasty Data Lab value` (served from a checked-in local artifact snapshot prepared from Dynasty Data Lab public dynasty startup ADP/value table, Superflex format, snapshot date 2026-04-08 UTC).
 - **Still mocked in this phase:** none on the current MVP player card fields.
 
