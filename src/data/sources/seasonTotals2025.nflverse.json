@@ -2,7 +2,7 @@
   "source": {
     "name": "nflverse stats_player_reg_2025.csv",
     "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_reg_2025.csv",
-    "derivedAt": "2026-04-08"
+    "derivedAt": "2026-04-09"
   },
   "players": [
     {
@@ -46,6 +46,24 @@
       "receptions": 129,
       "receivingYards": 1715,
       "receivingTds": 10
+    },
+    {
+      "playerName": "Amon-Ra St. Brown",
+      "receptions": 117,
+      "receivingYards": 1401,
+      "receivingTds": 11
+    },
+    {
+      "playerName": "Jaxon Smith-Njigba",
+      "receptions": 119,
+      "receivingYards": 1793,
+      "receivingTds": 10
+    },
+    {
+      "playerName": "Dalton Kincaid",
+      "receptions": 39,
+      "receivingYards": 571,
+      "receivingTds": 5
     }
   ]
 }

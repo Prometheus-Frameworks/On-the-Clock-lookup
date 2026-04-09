@@ -2,8 +2,8 @@
   "source": "KeepTradeCut dynasty rankings (Superflex)",
   "sourceType": "real, local artifact",
   "artifactDerivedFrom": "flamjammy/dynastykit-ktc-scraper docs/ktc_sf.csv",
-  "artifactUpdatedAtUtc": "2026-04-08T19:24:00Z",
-  "notes": "Overall rank is the 1-indexed row order from the KTC Superflex rankings snapshot after removing the two metadata header rows.",
+  "artifactUpdatedAtUtc": "2026-04-09T07:44:00Z",
+  "notes": "Overall rank is the 1-indexed row order from the KTC Superflex rankings snapshot after removing metadata/header rows. This PR backfills only selected weak-coverage players from the 2026-04-09 snapshot; existing rows are retained.",
   "players": [
     {
       "playerName": "Drake London",
@@ -49,6 +49,26 @@
       "playerName": "C.J. Stroud",
       "ktcRank": 69,
       "ktcValue": 4826
+    },
+    {
+      "playerName": "Amon-Ra St. Brown",
+      "ktcRank": 11,
+      "ktcValue": 7742
+    },
+    {
+      "playerName": "Jaxon Smith-Njigba",
+      "ktcRank": 4,
+      "ktcValue": 9832
+    },
+    {
+      "playerName": "Dalton Kincaid",
+      "ktcRank": 133,
+      "ktcValue": 3351
+    },
+    {
+      "playerName": "Baker Mayfield",
+      "ktcRank": 75,
+      "ktcValue": 4751
     }
   ]
 }
