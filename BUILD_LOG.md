@@ -20,6 +20,19 @@ Every meaningful build step should be recorded here so anyone can review what wa
 
 ## Entries
 
+### 2026-04-10 — MVP-card polish pass: team accents + wording + spacing cleanup
+- **Date:** 2026-04-10
+- **Goal:** Ship a small polish pass on top of the new MVP-card redesign by broadening team accent coverage, tightening clunky fallback copy, and smoothing minor layout rough edges without changing behavior.
+- **Prompt used:** “Build the next PR for this project as a short polish pass on top of the new MVP-card redesign.” (full prompt in chat task context).
+- **Model/agent used:** GPT-5.3-Codex (Codex CLI agent).
+- **Files changed:**
+  - `public/app.js`
+  - `public/playerViewModel.js`
+  - `public/styles.css`
+  - `BUILD_LOG.md`
+- **Result:** Expanded `TEAM_ACCENT_COLORS` to cover many more NFL team abbreviations used in local lookups (reducing fallback slate accents), simplified a position-specific unavailable totals message to read more naturally while staying explicit, and tightened card spacing/readability in header/subtle copy/source rows without altering lookup flow, API usage, or no-match behavior.
+- **Notes/issues:** Intentionally kept scope to polish only; no backend, architecture, or feature-surface changes.
+
 ### 2026-04-09 — MVP-card redesign pass: premium layout + section clarity
 - **Date:** 2026-04-09
 - **Goal:** Ship a stronger first MVP-card UI redesign pass that leans into a premium dark theme while preserving existing lookup behavior and truthfulness.
