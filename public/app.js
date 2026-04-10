@@ -5,17 +5,36 @@ const searchButton = form.querySelector('button[type="submit"]');
 
 const TEAM_ACCENT_COLORS = {
   ATL: '#d32f2f',
-  NYJ: '#16a34a',
-  LV: '#a1a1aa',
-  SF: '#ef4444',
-  DAL: '#60a5fa',
-  WAS: '#f59e0b',
-  TB: '#f87171',
+  ARI: '#ef4444',
+  BAL: '#7c3aed',
+  BUF: '#2563eb',
+  CAR: '#22d3ee',
   CHI: '#fb923c',
+  CIN: '#f97316',
+  CLE: '#f97316',
+  DAL: '#60a5fa',
+  DEN: '#f97316',
   DET: '#3b82f6',
-  SEA: '#84cc16',
+  GB: '#22c55e',
+  HOU: '#60a5fa',
+  IND: '#2563eb',
   JAX: '#06b6d4',
-  BUF: '#2563eb'
+  KC: '#ef4444',
+  LAC: '#38bdf8',
+  LAR: '#2563eb',
+  LV: '#a1a1aa',
+  MIN: '#a855f7',
+  NYG: '#60a5fa',
+  NYJ: '#16a34a',
+  NE: '#ef4444',
+  NO: '#facc15',
+  PHI: '#22c55e',
+  PIT: '#facc15',
+  SEA: '#84cc16',
+  SF: '#ef4444',
+  TB: '#f87171',
+  TEN: '#60a5fa',
+  WAS: '#f59e0b'
 };
 
 function formatValue(value) {
@@ -80,7 +99,7 @@ function renderSourceSummary(sourceItems) {
   return `
     <section class="section section-sources">
       <h3 class="section-title">Sources & context</h3>
-      <p class="section-subtle">Public-source labels shown for inspectability. Unavailable fields are kept explicit.</p>
+      <p class="section-subtle">Public-source labels are shown for inspectability. Missing fields stay explicitly unavailable.</p>
       <div class="source-summary">
         <ul>
           ${sourceRows}
@@ -134,7 +153,7 @@ function renderPlayerCard(player) {
 
       <section class="section section-performance">
         <h3 class="section-title">Performance snapshot</h3>
-        <p class="section-subtle">Latest season context shown as-is from checked-in artifacts.</p>
+        <p class="section-subtle">Latest season context is shown as-is from checked-in artifacts.</p>
         <div class="performance-highlight">
           ${renderMetric('2025 PPR finish', playerView.performance.pprFinish2025, { featured: true })}
         </div>

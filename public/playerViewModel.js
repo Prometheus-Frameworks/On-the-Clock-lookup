@@ -22,7 +22,7 @@ function getSeasonTotalsPresentation(player) {
 
   return {
     label: '2025 season totals',
-    value: 'unavailable (current artifact is receiving-style for this position)'
+    value: 'unavailable for this position (current artifact tracks receiving-style totals)'
   };
 }
 
